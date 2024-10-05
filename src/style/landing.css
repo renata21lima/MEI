@@ -1,0 +1,108 @@
+body {
+  font-family: "Poppins", sans-serif; /* Fonte do site */
+  max-width: 1200px; /* Mantem a largura máxima para os conteúdos não espalharem */
+  margin: 0 auto;
+  padding: 10px;
+}
+
+header {
+  display: flex; /* Para o cabeçalho ser um flex-blox*/
+  flex-direction: row; /* Para os elementos ficarem em linhas */
+  justify-content: space-between; /* Espaçamento entre as divs */
+  align-items: center; /* Alinhar itens no centro */
+}
+
+#title {
+  flex-direction: column; /* Para deixar os dois titulos em coluna fixa */
+  line-height: 10px; /* Diminuir o espaçamento entre linhas */
+}
+
+h1 {
+  font-weight: 100px; /* Diminuir Grossura da fonte */
+}
+
+li {
+  display: inline-block; /* Para os elementos ficarem em linhas */
+  margin: 15px; /* Para dar um espações entre os itens */
+}
+
+a {
+  color: black; /* Cor */
+  font-family: "poppinsmedium", sans-serif; /* Fonte */
+}
+
+a:hover {
+  color: #6fb645; /* Cor */
+  transition: 0.3s all; /* Tempo de transição */
+}
+
+#login-btn {
+  border: solid #003376; /* Cor */
+  padding: 10px; /* Espaçamento Interno */
+  border-radius: 14px; /* Arredondar bordas */
+}
+
+#login-btn:hover {
+  background-color: #003376; /* Mudança de fundo ao passar o mause */
+}
+
+main {
+  display: flex; /* Para o a-side e article ser um flex-blox*/
+  flex-direction: row; /* Para os elementos ficarem em linhas */
+  margin-top: 50px; /* Espaçamento do main do header */
+}
+
+h2 {
+  font-size: 55px; /* Tamanho da fonte */
+  line-height: 50px; /* Diminuir o espaçamento entre linhas */
+  font-family: "poppinsmedium", sans-serif; /* Fonte */
+}
+
+span {
+  color: #003376; /* Cor */
+  font-weight: bold;
+}
+
+p {
+  line-height: 25px; /* Diminuir o espaçamento entre linhas */
+  max-width: 500px; /* Mantem a largura máxima para os conteúdos não espalharem */
+  text-align: justify; /* Deixar o texto justificado */
+  font-family: "poppinslight", sans-serif; /* Fonte */
+}
+
+img {
+    margin-left: 20px; /* Afastar a esquerda*/
+}
+
+@media (max-width: 1280px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 430px) {
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+    main {
+        display: flex;
+        flex-direction: column;
+    }
+}

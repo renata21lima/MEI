@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/style/landing.css">
-    <link rel="shortcut icon" href="./src/assets/Mei I help U-02.svg" type="image/x-icon">
+    <!-- Links -->
+    <link rel="stylesheet" href="./src/style/landing.css"> <!-- Link CSS -->
+    <link rel="stylesheet" href="./src/style/fonts.css"> <!-- Link do Css com as fontes -->
+    <link rel="shortcut icon" href="./src/assets/img/Mei I help U-02.svg" type="image/x-icon"> <!-- Links favIcon-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> <!-- Fonte Poppins -->
     <title>MEI?</title>
 </head>
 <body>
     <!-- Nav da página -->
     <header>
-        <nav>
             <div id="title">
                 <h1>MEI</h1>     <!--Nome da empresa -->
                 <h1>I Help You?</h1>    <!-- Slogam-->
@@ -21,24 +25,25 @@
                 <a href="#"><li>Sobre</li></a>
                 <a href="#"><li>Planos</li></a>
                 <a href="#"><li>Contato</li></a>
-                <a href="#"><li>Login</li></a> <!-- Este link vai direcionar para outra pagina (login) -->
+                <a href="#" id="login-btn"><li>Login</li></a> <!-- Este link vai direcionar para outra pagina (login) -->
             </ul>
-        </nav>
+
     </header>
 
     <!-- Conteúdo -->
     <main>
         <!-- Para colocar o conteudo a esquerda -->
         <aside>
-            <h2>Conectando MEIs e <br> Contadores de Confiança</h2> <!-- Titulo -->
-            <p>Encontre suporte contábil que você precisa, de forma simples e rápida</p> <!-- Subtitulo-->
+            <h2>Conectando <span>MEIs</span> e <br> <span>Contadores</span> de Confiança</h2> <!-- Titulo , span para mudar um detalhe-->
+            <p><span>Encontre suporte contábil que você precisa, de forma simples e rápida</span></p> <!-- Subtitulo-->
             <p>MEI I Help You? conecta microempreendedores a contadores especializados, oferecendo suporte contábil rápido e eficiente. Nossa plataforma simplifica a gestão fiscal, ajudando você a resolver suas necessidades contábeis com facilidade, para que possa focar no crescimento do seu negócio.</p> <!-- Pequeno texto-->
         </aside>
 
         <!-- Para colocar o conteudo a direita -->
         <article>
-            <img src="" alt=""> <!-- Imagem -->
+            <img src="./src/assets/img/personagem 1 sem fundo.png" alt=""> <!-- Imagem -->
         </article>
     </main>
+
 </body>
 </html>
