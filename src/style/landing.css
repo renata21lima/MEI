@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body {
   font-family: "Poppins", sans-serif; /* Fonte do site */
   max-width: 1200px; /* Mantem a largura máxima para os conteúdos não espalharem */
@@ -106,3 +107,9 @@ img {
         flex-direction: column;
     }
 }
+=======
+body{
+    color: black;
+}
+
+>>>>>>> e74c815ac4a0e14d4baceb007a9e06f5f837ac3a
