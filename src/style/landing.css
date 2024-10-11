@@ -1,108 +1,215 @@
-body {
-  font-family: "Poppins", sans-serif; /* Fonte do site */
-  max-width: 1200px; /* Mantem a largura máxima para os conteúdos não espalharem */
-  margin: 0 auto;
-  padding: 10px;
+header {
+  width: 100%; /* Para manter o header com 100% do espaço*/
 }
 
-header {
+.header-content {
   display: flex; /* Para o cabeçalho ser um flex-blox*/
-  flex-direction: row; /* Para os elementos ficarem em linhas */
+  flex-direction: row; /* Para os elementos ficarem em li     nhas */
   justify-content: space-between; /* Espaçamento entre as divs */
   align-items: center; /* Alinhar itens no centro */
 }
 
 #title {
-  flex-direction: column; /* Para deixar os dois titulos em coluna fixa */
-  line-height: 10px; /* Diminuir o espaçamento entre linhas */
+flex-direction: column; /* Para deixar os dois titulos em coluna fixa */
+line-height: 23px; /* Diminuir o espaçamento entre linhas */
 }
 
-h1 {
-  font-weight: 100px; /* Diminuir Grossura da fonte */
-}
-
-li {
-  display: inline-block; /* Para os elementos ficarem em linhas */
-  margin: 15px; /* Para dar um espações entre os itens */
-}
-
-a {
-  color: black; /* Cor */
+.header-links {
+  display: flex; /* Para o cabeçalho ser um flex-blox*/
+  gap: 14px; /* Espaçamento */
   font-family: "poppinsmedium", sans-serif; /* Fonte */
 }
 
-a:hover {
+.links {
+  color: black; /* Cor do texto*/
+  cursor: pointer; /* Muda o cursor do mause */
+  text-decoration: none; /* Tira a bolinha e o hiperlink */
+  font-family: "poppinsmedium", sans-serif; /* Fonte */
+}
+
+.links:hover {
   color: #6fb645; /* Cor */
   transition: 0.3s all; /* Tempo de transição */
+  animation: translateY 10s infinite alternate; /* Animação */
+}
+
+@keyframes translateY {
+  from {
+      transform: translateY(0) scale(1);
+  }
+  to {
+      transform: translateY(-1px) scale(1.1);
+  }
 }
 
 #login-btn {
   border: solid #003376; /* Cor */
-  padding: 10px; /* Espaçamento Interno */
+  padding: 7px; /* Espaçamento Interno */
   border-radius: 14px; /* Arredondar bordas */
 }
 
 #login-btn:hover {
   background-color: #003376; /* Mudança de fundo ao passar o mause */
+  transition: background-color 0.8s;
+}
+
+.container {
+max-width: 1440px;
+margin: 15px auto;
+padding: 0 8px;
 }
 
 main {
-  display: flex; /* Para o a-side e article ser um flex-blox*/
-  flex-direction: row; /* Para os elementos ficarem em linhas */
-  margin-top: 50px; /* Espaçamento do main do header */
+display: flex; /* Para o a-side e article ser um flex-blox*/
+flex-direction: row; /* Para os elementos ficarem em linhas */
+margin-top: 70px; /* Espaçamento do main do header */
+min-height: 40vh;
 }
 
-h2 {
-  font-size: 55px; /* Tamanho da fonte */
-  line-height: 50px; /* Diminuir o espaçamento entre linhas */
-  font-family: "poppinsmedium", sans-serif; /* Fonte */
+main aside article {
+flex: 1;
 }
 
-span {
-  color: #003376; /* Cor */
-  font-weight: bold;
+main h2 {
+font-size: 60px; /* Tamanho da fonte */
+line-height: 50px; /* Diminuir o espaçamento entre linhas */
+font-family: "poppinsmedium", sans-serif; /* Fonte */
 }
 
-p {
-  line-height: 25px; /* Diminuir o espaçamento entre linhas */
-  max-width: 500px; /* Mantem a largura máxima para os conteúdos não espalharem */
-  text-align: justify; /* Deixar o texto justificado */
-  font-family: "poppinslight", sans-serif; /* Fonte */
+main span {
+color: #003376; /* Cor */
+font-weight: bold;
 }
 
-img {
-    margin-left: 20px; /* Afastar a esquerda*/
+main p {
+line-height: 25px; /* Diminuir o espaçamento entre linhas */
+max-width: 70%; /* Mantem a largura máxima para os conteúdos não espalharem */
+text-align: justify; /* Deixar o texto justificado */
+font-family: "poppinslight", sans-serif; /* Fonte */
+font-size: 20px;
 }
 
-@media (max-width: 1280px) {
-    header {
-        display: flex;
-        flex-direction: column;
-    }
-    main {
-        display: flex;
-        flex-direction: column;
-    }
+main img {
+margin-left: 10%; /* Afastar a esquerda*/
 }
 
-@media (max-width: 768px) {
-    header {
-        display: flex;
-        flex-direction: column;
-    }
-    main {
-        display: flex;
-        flex-direction: column;
-    }
+#servico {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 54px 14px;
 }
 
-@media (max-width: 430px) {
-    header {
-        display: flex;
-        flex-direction: column;
-    }
-    main {
-        display: flex;
-        flex-direction: column;
-    }
+.servico-content h2 {
+text-transform: uppercase;
+text-align: center;
+font-size: 38px;
+margin-bottom: 14px;
 }
+
+.servico-content p {
+line-height: 150%;
+margin-bottom: 14px;
+text-align: center;
+max-width: 780px;
+}
+
+.blog-contador-mei {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 16px;
+padding: 0 44px 34px 44px;
+}
+
+.blog-contador {
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+justify-content: center;
+border-radius: 8px;
+box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.8);
+overflow: hidden;
+}
+
+.blog-contador:hover {
+transform: scale(1.03);
+transition: 0.5s;
+}
+
+.blog-contador img {
+padding-top: 10px;
+width: 100%;
+max-width: 354px;
+}
+
+.blog-contador-info {
+padding: 10px;
+}
+
+.footer-content {
+display: flex; /* Para ser um flex-blox */
+align-items: center; /* Alinhar ao Centro */
+flex-direction: column; /* Deixar um conteudo embaixo do outro */
+  background-color: #003376;
+}
+
+.footer-content h3 {
+  color: #fff;
+  font-size: 1.8rem; /* Tamanho da fonte */
+  font-weight: 400; /* Largura da fonte */
+  line-height: 2.5rem; /* Reduz o espaçamento entre as linhas */
+}
+
+.footer-content p {
+  max-width: 500px; /* Tamanho da fonte */
+  margin: 5px auto; /* Reduz as margens */
+  line-height: 24px; /* Reduz o espaçamento entre linhas */
+  font-size: 14px; /* Peso da fonte */
+  color: #fff
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+margin: 0.5rem 0 2rem 0; /* Diminui o espaçamento superior e inferior */
+}
+
+.socials li {
+  margin: 0 10px;
+}
+
+.socials a {
+text-decoration: none; /* Sem a bolinha da lista */
+  color: #fff;
+}
+
+.socials a i {
+  font-size: 1.1rem;
+  transition: color 0.4s ease;
+}
+
+.socials a:hover i {
+color: #6fb645; /* Quando passar o mause o icone fica verde */
+}
+
+.footer-bottom {
+  background: #000;
+  display: flex;
+  justify-content: center;
+  text-align: justify;
+padding: 10px 0; /* Reduz o espaçamento interno */
+}
+
+.footer-bottom p {
+  color: #fff;
+  font-size: 14px;
+  word-spacing: 2px; /* Reduz o espaçamento entre as palavras */
+}
+
+

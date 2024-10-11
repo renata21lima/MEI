@@ -1,0 +1,47 @@
+/* Header */
+@media screen and (max-width: 768px) {
+    .header-content {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px;
+    }
+    .links {
+        margin-top: 20px;
+    }
+}
+
+/* Main */
+@media screen and (max-width: 768px) {
+    main {
+        min-height: 60vh;
+        margin-left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main h2 {
+        font-size: 35px;
+        text-align: center;
+    }
+    
+    main p {
+        margin-left: 50px;
+    }
+    
+    main img {
+        display: none;
+    }
+}
+
+/* Serviços */
+@media screen and (max-width: 768px) {
+    .blog-contador {
+        display: flex;
+        flex-direction: column;
+    }
+    .blog-contador img {
+        max-width: 740px;
+    }
+}
