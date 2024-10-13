@@ -28,18 +28,19 @@
                     <a class="links" href="#servico">Serviços</a>
                     <a class="links" href="#ajuda">Help?</a> 
                     <a class="links" href="#contato">Contato</a> 
-                    <a class="links"  id="login-btn" href="login">Login</a> <!-- Ira para outra página -->
+                    <!-- Botão que abrirá o modal ao clicar no login --> 
+                    <!--modal é uma função do bootstrap que irá separar o login entre mei e contador-->
+                    <a class="links" id="login-btn" href="/login-principal.html" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a             
                 </div>
             </nav>
         </div>
         </header>
-    </div>
-
     <div class="main-hero container">
         <main>
             <!-- Para colocar o conteudo a esquerda -->
             <aside>
                 <h2>Conectando MEIs e <br> Contadores de Confiança</h2> <!-- Titulo , span para mudar um detalhe-->
+
                 <p>Encontre suporte contábil que você precisa, de forma simples e rápida</p> <!-- Subtitulo-->
                 <p>MEI I Help You? conecta microempreendedores a contadores especializados, oferecendo suporte contábil rápido e eficiente. Nossa plataforma simplifica a gestão fiscal, ajudando você a resolver suas necessidades contábeis com facilidade, para que possa focar no crescimento do seu negócio.</p> <!-- Pequeno texto-->
             </aside>
@@ -71,6 +72,14 @@
                 </div>
             </div>
         </section>
+         <!-- Adicionando o campo de verificação de CNPJ logo abaixo -->
+            <section id="verificacao-cnpj">
+                <div class="verificacao-content container">
+                 <h3>Verificar CNPJ</h3>
+                <label for="cnpj">Digite seu CNPJ para verificar:</label>
+                <input type="text" id="cnpj" name="cnpj" placeholder="Digite seu CNPJ">
+                <button type="button" id="verificarCNPJ">Verificar CNPJ</button>
+            <div id="resultadoCNPJ"></div> <!-- Resultados da verificação serão exibidos aqui -->
     </section>
         <!-- Rodapé -->
     <footer id="contato">
@@ -88,5 +97,6 @@
                 <p>copyright &copy;2020. <br> Desenvolvido por: Ana Luiza, Barbara Chacon, Bruna Lopez, Felipe de Souza, Juan Pablo, Renata Lima e Thais Ferreira</p>
             </div>
     </footer>
+            <script src="script.js"></script> <!-- Inclui o arquivo JavaScript -->
 </body>
 </html>
