@@ -16,6 +16,7 @@ line-height: 23px; /* Diminuir o espaçamento entre linhas */
 
 .header-links {
   display: flex; /* Para o cabeçalho ser um flex-blox*/
+  align-items: center;
   gap: 14px; /* Espaçamento */
   font-family: "poppinsmedium", sans-serif; /* Fonte */
 }
@@ -44,8 +45,8 @@ line-height: 23px; /* Diminuir o espaçamento entre linhas */
 
 #login-btn {
   border: solid #003376; /* Cor */
-  padding: 7px; /* Espaçamento Interno */
-  border-radius: 14px; /* Arredondar bordas */
+  padding: 3px; /* Espaçamento Interno */
+  border-radius: 16px; /* Arredondar bordas */
 }
 
 #login-btn:hover {
