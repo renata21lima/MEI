@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel MEI</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background: linear-gradient(to right, #eaeaea, #f4f6f9); /* Gradiente suave */
+        }
+        /* Estilo do menu lateral */
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50;
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+        }
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: background-color 0.3s; /* Transição suave */
+        }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
+        /* Estilo do conteúdo principal */
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        .main-content h2 {
+            color: #2c3e50;
+            font-size: 24px; /* Tamanho aumentado */
+            margin-bottom: 20px; /* Espaçamento inferior */
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .box {
+            border: 1px solid #bdc3c7;
+            border-radius: 10px;
+            padding: 15px;
+            background-color: #ecf0f1;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra das caixas */
+            transition: transform 0.3s; /* Transição suave ao passar o mouse */
+        }
+        .box:hover {
+            transform: scale(1.02); /* Efeito de aumento ao passar o mouse */
+        }
+        .box h3 {
+            margin-top: 0;
+            color: #2980b9; /* Cor diferente para os títulos */
+        }
+        /* Estilo dos botões */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
+        }
+        .btn:hover {
+            background-color: #2980b9;
+            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu lateral -->
+    <div class="sidebar">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#services">Serviços</a>
+        <a href="#support">Suporte</a>
+        <a href="#performance">Indicadores</a>
+        <a href="#news">Notícias</a>
+    </div>
+
+    <!-- Conteúdo principal -->
+    <div class="main-content">
+        <h2>Bem-vindo, <span id="userName">[Nome do MEI]</span>!</h2>
+
+        <!-- Dashboard -->
+        <div id="dashboard" class="section">
+            <h3>Seu Dashboard</h3>
+            <div class="box">
+                <p>Status MEI: <strong>Ativo</strong></p>
+                <p>Próximos prazos: <strong>15 de Novembro (DAS)</strong></p>
+            </div>
+        </div>
+
+        <!-- Serviços e Recursos -->
+        <div id="services" class="section">
+            <h3>Serviços Contábeis para MEI</h3>
+            <div class="box">
+                <p><strong>Precisa de ajuda contábil?</strong> Agende uma consulta:</p>
+                <a href="#" class="btn">Agendar Consulta com Contador</a>
+                <p><strong>Consultas rápidas:</strong></p>
+                <a href="#" class="btn">Consultar Guia DAS</a>
+                <a href="#" class="btn">Emitir Nota Fiscal</a>
+            </div>
+        </div>
+
+        <!-- Suporte -->
+        <div id="support" class="section">
+            <h3>Suporte e Comunidade</h3>
+            <div class="box">
+                <p>Participe do nosso fórum de discussão e tire suas dúvidas com outros MEIs.</p>
+                <a href="#" class="btn">Acessar Fórum</a>
+                <p>Precisa de ajuda urgente? Entre em contato com um especialista:</p>
+                <a href="#" class="btn">Falar com um Especialista</a>
+            </div>
+        </div>
+
+        <!-- Indicadores de Performance -->
+        <div id="performance" class="section">
+            <h3>Indicadores de Performance</h3>
+            <div class="box">
+                <p>Acompanhe o desempenho do seu negócio:</p>
+                <p>[Gráfico de Faturamento]</p>
+            </div>
+        </div>
+
+        <!-- Notícias e Atualizações -->
+        <div id="news" class="section">
+            <h3>Notícias e Atualizações</h3>
+            <div class="box">
+                <p>Confira as últimas notícias que podem impactar o seu negócio:</p>
+                <ul>
+                    <li><a href="#">Alterações na legislação para MEIs</a></li>
+                    <li><a href="#">Novos incentivos para pequenos empresários</a></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Recupera os dados do usuário do localStorage
+        const user = JSON.parse(localStorage.getItem('user'));
+
+        // Verifica se o usuário está logado e tem nome
+        if (user && user.nome) {
+            // Exibe o nome do usuário
+            document.getElementById('userName').textContent = user.nome;
+        } else {
+            // Caso não tenha um nome armazenado, exibe uma mensagem genérica
+            document.getElementById('userName').textContent = 'usuário';
+        }
+    </script>
+
+</body>
+</html>

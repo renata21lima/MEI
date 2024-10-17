@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Contador</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #f4f6f9; /* Cor de fundo suave */
+            color: #34495e; /* Cor de texto principal */
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #2c3e50; /* Cor da barra lateral */
+            height: 100vh;
+            padding-top: 20px;
+            position: fixed;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de profundidade */
+        }
+        .sidebar a {
+            padding: 15px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            transition: background-color 0.3s ease; /* Transição suave */
+        }
+        .sidebar a:hover {
+            background-color: #34495e; /* Cor ao passar o mouse */
+            border-left: 4px solid #3498db; /* Linha de destaque ao passar o mouse */
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+            flex-grow: 1; /* Para que a área principal ocupe o espaço restante */
+        }
+        .main-content h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .box {
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white; /* Fundo branco para destaque */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+            transition: transform 0.2s; /* Transição suave para efeito de hover */
+        }
+        .box:hover {
+            transform: translateY(-2px); /* Levanta o box ao passar o mouse */
+        }
+        .box h3 {
+            margin-top: 0;
+            margin-bottom: 15px; /* Espaço abaixo do título */
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db; /* Cor do botão */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Transição suave */
+            margin-top: 10px; /* Espaço acima do botão */
+        }
+        .btn:hover {
+            background-color: #2980b9; /* Cor do botão ao passar o mouse */
+        }
+        .chart {
+            background-color: #ecf0f1; /* Fundo claro para a área do gráfico */
+            padding: 15px;
+            border-radius: 10px;
+            height: 200px;
+            border: 1px solid #bdc3c7; /* Borda sutil */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* Estilo para listas */
+        ul {
+            list-style-type: none; /* Remove marcador da lista */
+            padding: 0; /* Remove preenchimento */
+        }
+        ul li {
+            background: #f8f9fa; /* Fundo suave para itens da lista */
+            margin: 10px 0; /* Espaço entre os itens */
+            padding: 10px; /* Preenchimento interno */
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background-color 0.3s; /* Transição suave */
+        }
+        ul li:hover {
+            background: #e9ecef; /* Cor ao passar o mouse */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <a href="#dashboard">Dashboard</a>
+        <a href="#clients">Clientes MEI</a>
+        <a href="#tasks">Tarefas Pendentes</a>
+        <a href="#performance">Relatórios e Indicadores</a>
+        <a href="#tools">Ferramentas Contábeis</a>
+        <a href="#news">Notícias e Atualizações</a>
+    </div>
+
+    <div class="main-content">
+        <h2>Bem-vindo, <span id="nomeContador">usuário</span>!</h2>
+
+        <div id="dashboard" class="section">
+            <h3>Resumo Geral</h3>
+            <div class="box">
+                <p>Total de clientes: <strong>12 MEIs</strong></p>
+                <p>Próximos prazos de DAS: <strong>15 de Novembro</strong></p>
+            </div>
+        </div>
+
+        <div id="clients" class="section">
+            <h3>Clientes MEI</h3>
+            <div class="box">
+                <p>Gerencie seus clientes MEI abaixo:</p>
+                <ul>
+                    <li><a href="#">Cliente 1: João Silva</a></li>
+                    <li><a href="#">Cliente 2: Maria Oliveira</a></li>
+                    <li><a href="#">Cliente 3: Pedro Santos</a></li>
+                </ul>
+                <a href="#" class="btn">Adicionar Novo Cliente</a>
+            </div>
+        </div>
+
+        <div id="tasks" class="section">
+            <h3>Tarefas Pendentes</h3>
+            <div class="box">
+                <p>Acompanhe as tarefas a serem feitas para cada cliente:</p>
+                <ul>
+                    <li>Emitir guia DAS para João Silva até 10/11</li>
+                    <li>Revisar declaração de faturamento de Maria Oliveira</li>
+                    <li>Orientar Pedro Santos sobre emissão de nota fiscal</li>
+                </ul>
+                <a href="#" class="btn">Adicionar Nova Tarefa</a>
+            </div>
+        </div>
+
+        <div id="performance" class="section">
+            <h3>Relatórios e Indicadores</h3>
+            <div class="box">
+                <p>Visualize os indicadores financeiros e relatórios dos seus clientes:</p>
+                <div class="chart">
+                    <p>[Gráfico de Faturamento por Cliente]</p>
+                </div>
+                <a href="#" class="btn">Gerar Relatório</a>
+            </div>
+        </div>
+
+        <div id="tools" class="section">
+            <h3>Ferramentas Contábeis</h3>
+            <div class="box">
+                <p>Utilize nossas ferramentas para facilitar o trabalho com seus clientes:</p>
+                <a href="#" class="btn">Gerar Guia DAS</a>
+                <a href="#" class="btn">Emitir Nota Fiscal</a>
+                <a href="#" class="btn">Simular Impostos</a>
+            </div>
+        </div>
+
+        <div id="news" class="section">
+            <h3>Notícias e Atualizações</h3>
+            <div class="box">
+                <p>Fique por dentro das últimas novidades que afetam a contabilidade para MEIs:</p>
+                <ul>
+                    <li><a href="#">Alterações na legislação de MEIs</a></li>
+                    <li><a href="#">Novas regras para emissão de notas fiscais</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            // Recupera os dados do usuário do localStorage
+            const user = JSON.parse(localStorage.getItem('user'));
+    
+            // Verifica se o usuário está logado e tem nome
+            if (user && user.nome) {
+                // Exibe o nome do usuário
+                document.getElementById('userName').textContent = user.nome;
+            } else {
+                // Caso não tenha um nome armazenado, exibe uma mensagem genérica
+                document.getElementById('userName').textContent = 'usuário';
+            }
+        </script>
+    </div>
+
+</body>
+</html>

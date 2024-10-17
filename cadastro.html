@@ -1,29 +1,112 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro - MEI I Help You?</title>
-    
-    <!-- Link para Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="./style-cadastro.css">
+    <title>Cadastro MEI e Contador</title>
+    <style>
+        .form-container {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container text-center mt-5">
-        <h1>Cadastro</h1>
-        <p>Selecione seu tipo de usuário:</p>
+    <h2>Escolha o tipo de cadastro</h2>
+    <select id="userType" onchange="showForm()">
+        <option value="">Selecione...</option>
+        <option value="mei">MEI</option>
+        <option value="contador">Contador</option>
+    </select>
 
-        <div class="row justify-content-center">
-            <div class="col-md-4">
-                <a href="cadastro-mei.html" class="btn btn-primary btn-lg btn-block mb-3">Sou MEI</a>
-            </div>
-            <div class="col-md-4">
-                <a href="cadastro-contador.html" class="btn btn-secondary btn-lg btn-block mb-3">Sou Contador</a>
-            </div>
-        </div>
+    <!-- Formulário MEI -->
+    <div id="meiForm" class="form-container">
+        <h3>Cadastro MEI</h3>
+        <form id="formMei">
+
+            <label for="cnpjMei">CNPJ:</label>
+            <input type="text" id="cnpjMei" name="cnpjMei"><br><br>
+
+            <label for="nomeMei">Nome:</label>
+            <input type="text" id="nomeMei" name="nomeMei"><br><br>
+            
+            <label for="enderecoMei">Endereço:</label>
+            <input type="text" id="enderecoMei" name="enderecoMei"><br><br>
+
+            <label for="emailMei">Email:</label>
+            <input type="email" id="emailMei" name="emailMei"><br><br>
+
+            <label for="senhaMei">Senha:</label>
+            <input type="text" id="senhaMei" name="senhaMei"><br><br>
+            
+            <button type="button" onclick="submitForm('mei')">Cadastrar MEI</button>
+        </form>
     </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Formulário Contador -->
+    <div id="contadorForm" class="form-container">
+        <h3>Cadastro Contador</h3>
+        <form id="formContador">
+            <label for="nomeContador">Nome:</label>
+            <input type="text" id="nomeContador" name="nomeContador"><br><br>
+            
+            <label for="emailContador">Email:</label>
+            <input type="email" id="emailContador" name="emailContador"><br><br>
+
+            <label for="cpfContador">CPF:</label>
+            <input type="text" id="cpfContador" name="cpfContador"><br><br>
+            
+            <button type="button" onclick="submitForm('contador')">Cadastrar Contador</button>
+        </form>
+    </div>
+
+    <script>
+        function showForm() {
+            const userType = document.getElementById("userType").value;
+            
+            // Esconde todos os formulários
+            document.getElementById("meiForm").style.display = "none";
+            document.getElementById("contadorForm").style.display = "none";
+            
+            // Exibe o formulário correspondente ao tipo de usuário selecionado
+            if (userType === "mei") {
+                document.getElementById("meiForm").style.display = "block";
+            } else if (userType === "contador") {
+                document.getElementById("contadorForm").style.display = "block";
+            }
+        }
+
+        function submitForm(userType) {
+            let formData;
+        
+            // Captura os dados do formulário de acordo com o tipo de usuário
+            if (userType === "mei") {
+                formData = {
+                    tipo: "mei",
+                    nome: document.getElementById("nomeMei").value,
+                    email: document.getElementById("emailMei").value,
+                    cnpj: document.getElementById("cnpjMei").value
+                };
+            } else if (userType === "contador") {
+                formData = {
+                    tipo: "contador",
+                    nome: document.getElementById("nomeContador").value,
+                    email: document.getElementById("emailContador").value,
+                    cpf: document.getElementById("cpfContador").value
+                };
+            }
+        
+            // Armazena o usuário no localStorage (ou outro mecanismo que desejar)
+            localStorage.setItem('user', JSON.stringify(formData));
+            
+            // Redireciona para a página correspondente
+            if (userType === "mei") {
+                window.location.href = "home-mei.html";
+            } else if (userType === "contador") {
+                window.location.href = "home-contador.html";
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1,0 +1,69 @@
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Container principal */
+h2 {
+    color: #003376; /* Cor principal para o título */
+    text-align: center;
+}
+
+h3 {
+    color: #003376; /* Cor principal para os subtítulos */
+}
+
+select, input, button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Formulários */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    width: 350px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Botões */
+button {
+    background-color: #003376; /* Cor principal */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6fb645; /* Cor de destaque ao passar o mouse */
+}
+
+/* Inputs focados */
+input:focus, select:focus {
+    border-color: #6fb645;
+    outline: none;
+}
+
+/* Melhorando responsividade */
+@media (max-width: 400px) {
+    .form-container {
+        width: 100%;
+        padding: 15px;
+    }
+}
