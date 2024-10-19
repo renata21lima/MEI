@@ -19,7 +19,7 @@
             height: 100vh;
             padding-top: 20px;
             position: fixed;
-            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Sombra para efeito de profundidade */
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
         }
         .sidebar a {
             padding: 15px;
@@ -30,16 +30,29 @@
         }
         .sidebar a:hover {
             background-color: #34495e; /* Cor ao passar o mouse */
-            border-left: 4px solid #3498db; /* Linha de destaque ao passar o mouse */
+            border-left: 4px solid #1abc9c; /* Linha de destaque ao passar o mouse */
         }
         .main-content {
             margin-left: 250px;
-            padding: 20px;
+            padding: 70px;
             flex-grow: 1; /* Para que a área principal ocupe o espaço restante */
+            position: relative; /* Para posicionamento do logo */
         }
+        .logo {
+            position: absolute;
+            top: 0px; /* Ajuste este valor conforme necessário */
+            right: 20px; /* Distância da direita */
+            width: 200px; /* Aumentar a largura do logo */
+            height: auto; /* Manter a proporção do logo */
+            cursor: pointer; /* Mudança de cursor ao passar por cima da logo */
+        }
+
+
         .main-content h2 {
             color: #2c3e50;
             margin-bottom: 20px;
+            border-bottom: 2px solid #1abc9c; /* Linha abaixo do título */
+            padding-bottom: 10px; /* Espaço abaixo do título */
         }
         .section {
             margin-bottom: 30px;
@@ -57,11 +70,12 @@
         .box h3 {
             margin-top: 0;
             margin-bottom: 15px; /* Espaço abaixo do título */
+            color: #1abc9c; /* Cor do título */
         }
         .btn {
             display: inline-block;
             padding: 10px 20px;
-            background-color: #3498db; /* Cor do botão */
+            background-color: #1abc9c; /* Cor do botão */
             color: white;
             text-decoration: none;
             border-radius: 5px;
@@ -69,7 +83,7 @@
             margin-top: 10px; /* Espaço acima do botão */
         }
         .btn:hover {
-            background-color: #2980b9; /* Cor do botão ao passar o mouse */
+            background-color: #16a085; /* Cor do botão ao passar o mouse */
         }
         .chart {
             background-color: #ecf0f1; /* Fundo claro para a área do gráfico */
@@ -80,6 +94,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #34495e; /* Cor do texto do gráfico */
         }
         /* Estilo para listas */
         ul {
@@ -92,6 +107,7 @@
             padding: 10px; /* Preenchimento interno */
             border-radius: 5px; /* Bordas arredondadas */
             transition: background-color 0.3s; /* Transição suave */
+            color: #2c3e50; /* Cor do texto */
         }
         ul li:hover {
             background: #e9ecef; /* Cor ao passar o mouse */
@@ -110,7 +126,8 @@
     </div>
 
     <div class="main-content">
-        <h2>Bem-vindo, <span id="nomeContador">usuário</span>!</h2>
+        <a href="landing.html"><img src="logo.svg" alt="Logo" class="logo"></a> <!-- Logo agora é um link -->
+        <h2>Bem-vindo Contador(a)! <span id="nomeContador"></span>!</h2>
 
         <div id="dashboard" class="section">
             <h3>Resumo Geral</h3>
@@ -172,24 +189,14 @@
             <div class="box">
                 <p>Fique por dentro das últimas novidades que afetam a contabilidade para MEIs:</p>
                 <ul>
-                    <li><a href="#">Alterações na legislação de MEIs</a></li>
-                    <li><a href="#">Novas regras para emissão de notas fiscais</a></li>
+                    <li><a href="https://www.gov.br/nfse/pt-br/biblioteca/legislacao-aplicavel-ao-mei">Alterações na legislação de MEIs</a></li>
+                    <li><a href="https://nfe.io/blog/nota-fiscal/regras-emissao-nota-fiscal/">Novas regras para emissão de notas fiscais</a></li>
                 </ul>
             </div>
         </div>
 
         <script>
-            // Recupera os dados do usuário do localStorage
-            const user = JSON.parse(localStorage.getItem('user'));
-    
-            // Verifica se o usuário está logado e tem nome
-            if (user && user.nome) {
-                // Exibe o nome do usuário
-                document.getElementById('userName').textContent = user.nome;
-            } else {
-                // Caso não tenha um nome armazenado, exibe uma mensagem genérica
-                document.getElementById('userName').textContent = 'usuário';
-            }
+
         </script>
     </div>
 

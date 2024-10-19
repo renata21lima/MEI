@@ -56,7 +56,16 @@
 
             <label for="cpfContador">CPF:</label>
             <input type="text" id="cpfContador" name="cpfContador"><br><br>
-            
+
+            <label for="crcContador">CRC:</label>
+            <input type="text" id="crcContador" name="crcContador"><br><br>
+
+            <div>
+                <input type="checkbox" id="verificacao" required>
+                <label for="verificacao">Concordo em passar por um processo de verificação de dados para garantir que sou realmente um contador.</label>
+            </div>
+            <br>
+
             <button type="button" onclick="submitForm('contador')">Cadastrar Contador</button>
         </form>
     </div>
@@ -89,11 +98,17 @@
                     cnpj: document.getElementById("cnpjMei").value
                 };
             } else if (userType === "contador") {
+                // Verifica se o checkbox de verificação foi marcado
+                if (!document.getElementById("verificacao").checked) {
+                    alert("Você precisa concordar com o processo de verificação de dados.");
+                    return; // Interrompe a execução se não estiver marcado
+                }
                 formData = {
                     tipo: "contador",
                     nome: document.getElementById("nomeContador").value,
                     email: document.getElementById("emailContador").value,
-                    cpf: document.getElementById("cpfContador").value
+                    cpf: document.getElementById("cpfContador").value,
+                    crc: document.getElementById("crcContador").value
                 };
             }
         

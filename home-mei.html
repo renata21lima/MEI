@@ -37,6 +37,15 @@
             padding: 20px;
             flex-grow: 1;
         }
+        .logo {
+            position: absolute;
+            top: 10px; /* Ajuste conforme necessário */
+            right: 20px; /* Distância da direita */
+            width: 200px; /* Ajuste o tamanho conforme necessário */
+            height: auto; /* Mantém a proporção da imagem */
+            cursor: pointer; /* Cursor como ponteiro ao passar o mouse */
+        }
+
         .main-content h2 {
             color: #2c3e50;
             font-size: 24px; /* Tamanho aumentado */
@@ -89,6 +98,8 @@
 
     <!-- Conteúdo principal -->
     <div class="main-content">
+        <a href="./landing.html"><img src="/logo.svg" alt="Logo" class="logo"></a>
+
         <h2>Bem-vindo, <span id="userName">[Nome do MEI]</span>!</h2>
 
         <!-- Dashboard -->
@@ -105,10 +116,9 @@
             <h3>Serviços Contábeis para MEI</h3>
             <div class="box">
                 <p><strong>Precisa de ajuda contábil?</strong> Agende uma consulta:</p>
-                <a href="#" class="btn">Agendar Consulta com Contador</a>
-                <p><strong>Consultas rápidas:</strong></p>
-                <a href="#" class="btn">Consultar Guia DAS</a>
-                <a href="#" class="btn">Emitir Nota Fiscal</a>
+                
+                <a href="agendar-consulta.html" class="btn">Agendar Consulta com Contador</a>
+ 
             </div>
         </div>
 
@@ -117,7 +127,7 @@
             <h3>Suporte e Comunidade</h3>
             <div class="box">
                 <p>Participe do nosso fórum de discussão e tire suas dúvidas com outros MEIs.</p>
-                <a href="#" class="btn">Acessar Fórum</a>
+                <a href="./forum.html" class="btn">Acessar Fórum</a>
                 <p>Precisa de ajuda urgente? Entre em contato com um especialista:</p>
                 <a href="#" class="btn">Falar com um Especialista</a>
             </div>
@@ -138,8 +148,10 @@
             <div class="box">
                 <p>Confira as últimas notícias que podem impactar o seu negócio:</p>
                 <ul>
-                    <li><a href="#">Alterações na legislação para MEIs</a></li>
-                    <li><a href="#">Novos incentivos para pequenos empresários</a></li>
+                    <li><a href="https://www.gov.br/nfse/pt-br/biblioteca/legislacao-aplicavel-ao-mei">Alterações na legislação para MEIs</a></li>
+                    <li><a href="https://sebrae.com.br/sites/PortalSebrae/ufs/ac/artigos/conheca-as-vantagens-e-obrigacoes-de-ser-um-mei,ed71c306d70db710VgnVCM100000d701210aRCRD#:
+                                ~:text=Vantagens%20de%20ser%20um%20MEI&text=
+                                Baixo%20custo%20mensal%20de%20tributos,a%20apoio%20t%C3%A9cnico%20do%20SEBRAE.">Novos incentivos para pequenos empresários</a></li>
                 </ul>
             </div>
         </div>

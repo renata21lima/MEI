@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fórum dos MEIs</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #34495e;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1abc9c;
+        }
+        .post {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+        }
+        .post h3 {
+            margin: 0;
+        }
+        .post p {
+            margin: 10px 0;
+        }
+        .comment-form {
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #bdc3c7;
+        }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #bdc3c7;
+            border-radius: 5px;
+        }
+        .comment-form button {
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .comment-form button:hover {
+            background-color: #16a085;
+        }
+        .comments {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        .comment {
+            background-color: #ecf0f1;
+            padding: 5px;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Fórum dos MEIs</h1>
+
+        <div id="posts">
+            <div class="post">
+                <h3>Dúvida sobre emissão de nota fiscal</h3>
+                <p>Olá, estou com dificuldades para emitir notas fiscais. Alguém pode me ajudar?</p>
+                <div class="comments">
+                    <div class="comment">Resposta: Você pode utilizar plataformas como NFE.io para emitir suas notas fiscais.</div>
+                    <div class="comment">Resposta: Também recomendo consultar o SEBRAE, eles têm ótimos recursos.</div>
+                </div>
+                <div class="comment-form">
+                    <input type="text" placeholder="Digite seu nome" id="commentName1">
+                    <textarea placeholder="Digite sua resposta" id="commentText1"></textarea>
+                    <button onclick="addComment(1)">Responder</button>
+                </div>
+            </div>
+
+            <div class="post">
+                <h3>Dúvida sobre pagamento do DAS</h3>
+                <p>Alguém sabe como funciona o pagamento do DAS? Estou confuso.</p>
+                <div class="comments">
+                    <div class="comment">Resposta: O pagamento do DAS deve ser feito todo mês, e você pode pagar online pelo site da Receita Federal.</div>
+                </div>
+                <div class="comment-form">
+                    <input type="text" placeholder="Digite seu nome" id="commentName2">
+                    <textarea placeholder="Digite sua resposta" id="commentText2"></textarea>
+                    <button onclick="addComment(2)">Responder</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function addComment(postId) {
+            const name = document.getElementById(`commentName${postId}`).value;
+            const text = document.getElementById(`commentText${postId}`).value;
+            const commentsDiv = document.querySelectorAll('.comments')[postId - 1]; // Pega o div correto para os comentários
+            
+            if (name && text) {
+                const newComment = document.createElement('div');
+                newComment.classList.add('comment');
+                newComment.textContent = `${name}: ${text}`;
+                commentsDiv.appendChild(newComment); // Adiciona o novo comentário na lista
+                document.getElementById(`commentName${postId}`).value = ''; // Limpa o campo de nome
+                document.getElementById(`commentText${postId}`).value = ''; // Limpa o campo de texto
+            } else {
+                alert("Por favor, preencha todos os campos!");
+            }
+        }
+    </script>
+
+</body>
+</html>
