@@ -3,87 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style/home-mei.css">
     <title>Painel MEI</title>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            background: linear-gradient(to right, #eaeaea, #f4f6f9); /* Gradiente suave */
-        }
-        /* Estilo do menu lateral */
-        .sidebar {
-            width: 250px;
-            background-color: #2c3e50;
-            height: 100vh;
-            padding-top: 20px;
-            position: fixed;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
-        }
-        .sidebar a {
-            padding: 15px;
-            text-decoration: none;
-            color: white;
-            display: block;
-            transition: background-color 0.3s; /* Transição suave */
-        }
-        .sidebar a:hover {
-            background-color: #34495e;
-        }
-        /* Estilo do conteúdo principal */
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-            flex-grow: 1;
-        }
-        .logo {
-            position: absolute;
-            top: 10px; /* Ajuste conforme necessário */
-            right: 20px; /* Distância da direita */
-            width: 200px; /* Ajuste o tamanho conforme necessário */
-            height: auto; /* Mantém a proporção da imagem */
-            cursor: pointer; /* Cursor como ponteiro ao passar o mouse */
-        }
-
-        .main-content h2 {
-            color: #2c3e50;
-            font-size: 24px; /* Tamanho aumentado */
-            margin-bottom: 20px; /* Espaçamento inferior */
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .box {
-            border: 1px solid #bdc3c7;
-            border-radius: 10px;
-            padding: 15px;
-            background-color: #ecf0f1;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra das caixas */
-            transition: transform 0.3s; /* Transição suave ao passar o mouse */
-        }
-        .box:hover {
-            transform: scale(1.02); /* Efeito de aumento ao passar o mouse */
-        }
-        .box h3 {
-            margin-top: 0;
-            color: #2980b9; /* Cor diferente para os títulos */
-        }
-        /* Estilo dos botões */
-        .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s, transform 0.3s; /* Transições suaves */
-        }
-        .btn:hover {
-            background-color: #2980b9;
-            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
-        }
-    </style>
 </head>
 <body>
 
@@ -118,7 +39,6 @@
                 <p><strong>Precisa de ajuda contábil?</strong> Agende uma consulta:</p>
                 
                 <a href="/agendar-consulta.html" class="btn">Agendar Consulta com Contador</a>
- 
             </div>
         </div>
 

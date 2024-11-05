@@ -1,0 +1,107 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: #f4f6f9; /* Cor de fundo suave */
+    color: #34495e; /* Cor de texto principal */
+}
+.sidebar {
+    width: 250px;
+    background-color: #2c3e50; /* Cor da barra lateral */
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Sombra para efeito de profundidade */
+}
+.sidebar a {
+    padding: 15px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    transition: background-color 0.3s ease; /* Transição suave */
+}
+.sidebar a:hover {
+    background-color: #34495e; /* Cor ao passar o mouse */
+    border-left: 4px solid #1abc9c; /* Linha de destaque ao passar o mouse */
+}
+.main-content {
+    margin-left: 250px;
+    padding: 70px;
+    flex-grow: 1; /* Para que a área principal ocupe o espaço restante */
+    position: relative; /* Para posicionamento do logo */
+}
+.logo {
+    position: absolute;
+    top: 0px; /* Ajuste este valor conforme necessário */
+    right: 20px; /* Distância da direita */
+    width: 200px; /* Aumentar a largura do logo */
+    height: auto; /* Manter a proporção do logo */
+    cursor: pointer; /* Mudança de cursor ao passar por cima da logo */
+}
+
+
+.main-content h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1abc9c; /* Linha abaixo do título */
+    padding-bottom: 10px; /* Espaço abaixo do título */
+}
+.section {
+    margin-bottom: 30px;
+}
+.box {
+    border-radius: 10px;
+    padding: 20px;
+    background-color: white; /* Fundo branco para destaque */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+    transition: transform 0.2s; /* Transição suave para efeito de hover */
+}
+.box:hover {
+    transform: translateY(-2px); /* Levanta o box ao passar o mouse */
+}
+.box h3 {
+    margin-top: 0;
+    margin-bottom: 15px; /* Espaço abaixo do título */
+    color: #1abc9c; /* Cor do título */
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1abc9c; /* Cor do botão */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Transição suave */
+    margin-top: 10px; /* Espaço acima do botão */
+}
+.btn:hover {
+    background-color: #16a085; /* Cor do botão ao passar o mouse */
+}
+.chart {
+    background-color: #ecf0f1; /* Fundo claro para a área do gráfico */
+    padding: 15px;
+    border-radius: 10px;
+    height: 200px;
+    border: 1px solid #bdc3c7; /* Borda sutil */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #34495e; /* Cor do texto do gráfico */
+}
+/* Estilo para listas */
+ul {
+    list-style-type: none; /* Remove marcador da lista */
+    padding: 0; /* Remove preenchimento */
+}
+ul li {
+    background: #f8f9fa; /* Fundo suave para itens da lista */
+    margin: 10px 0; /* Espaço entre os itens */
+    padding: 10px; /* Preenchimento interno */
+    border-radius: 5px; /* Bordas arredondadas */
+    transition: background-color 0.3s; /* Transição suave */
+    color: #2c3e50; /* Cor do texto */
+}
+ul li:hover {
+    background: #e9ecef; /* Cor ao passar o mouse */
+}

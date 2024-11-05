@@ -24,26 +24,22 @@
                     <h1>MEI</h1>     <!--Nome da empresa -->
                     <h1>I Help You?</h1>    <!-- Slogam-->
                 </div>
-                
                 <div class="header-links">  <!-- Contem Links -->
-                    <a class="servico" href="#servico">Serviços</a>
-                    <a class="ajuda" href="#ajuda">Help?</a> 
-                    <a class="contato" href="#contato">Contato</a> 
-                    <!-- Botão que abrirá o modal ao clicar no login --> 
-                    <!--modal é uma função do bootstrap que irá separar o login entre mei e contador-->
-                    <a class="links" id="login-btn" href="cadastro.html" data-bs-toggle="modal" data-bs-target="#loginModal">Cadastre-se</a
-
-                    </div>
+                    <a class="links" href="#servico">Serviços</a>
+                    <a class="links" href="#faq">Help?</a> 
+                    <a class="links" href="#contato">Contato</a> 
+                    <a class="links"  id="login-btn" href="login">Login</a> <!-- Ira para outra página -->
+                </div>
             </nav>
         </div>
         </header>
-        
+    </div>
+
     <div class="main-hero container">
         <main>
             <!-- Para colocar o conteudo a esquerda -->
             <aside>
                 <h2>Conectando MEIs e <br> Contadores de Confiança</h2> <!-- Titulo , span para mudar um detalhe-->
-                <br>
                 <p>Encontre suporte contábil que você precisa, de forma simples e rápida</p> <!-- Subtitulo-->
                 <p>MEI I Help You? conecta microempreendedores a contadores especializados, oferecendo suporte contábil rápido e eficiente. Nossa plataforma simplifica a gestão fiscal, ajudando você a resolver suas necessidades contábeis com facilidade, para que possa focar no crescimento do seu negócio.</p> <!-- Pequeno texto-->
             </aside>
@@ -57,26 +53,46 @@
     <section id="servico">
         <div class="servico-content container">
             <h2>Serviços</h2> <!-- Titulo -->
-            
             <p>Nosso site oferece dois serviços principais: acesso a um blog informativo com artigos sobre gestão financeira, obrigações fiscais e empreendedorismo, e uma plataforma que conecta microempreendedores individuais (MEIs) a contadores especializados. Com apenas alguns cliques, você pode esclarecer suas dúvidas no blog ou encontrar o suporte contábil personalizado que precisa para otimizar a administração do seu negócio.</p>
         </div>
         <section class="blog-contador-mei">
             <div class="blog-contador">
-                <img src="./src/assets/img/personagem 1 sem fundo.png" alt="Imagem Blog">
+                <img src="./src/assets/img/Personagem com bolsa.png" alt="Imagem Blog">
                 <div class="blog-contador-info">
                     <strong>Blog</strong>
                     <p>Acesse nosso blog para encontrar dicas e informações rápidas sobre gestão financeira, obrigações fiscais, empreendedorismo e muito mais.</p>
                 </div>
             </div> 
             <div class="blog-contador">
-                <img src="./src/assets/img/personagem 1 sem fundo.png" alt="Imagem Blog">
+                <img src="./src/assets/img/Dois Personagens.png" alt="Imagem Blog">
                 <div class="blog-contador-info">
                     <strong>Conexão entre Contadores e MEIs</strong>
                     <p>Nossa plataforma conecta você a contadores e consultores especializados que podem ajudar a resolver suas dúvidas e a otimizar a gestão do seu negócio.</p>
                 </div>
             </div>
         </section>
+        <a href="./cadastro.html" class="btn-cadastrar" target="_blank">Cadastre-se agora!</a>
     </section>
+
+    <!-- Perguntas Frequentes (FAQ) -->
+    <section id="faq">
+        <div class="faq-content container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <h3>O que é um MEI?</h3>
+                <p>O MEI é uma categoria simplificada para microempreendedores individuais, oferecendo uma forma mais acessível de formalização.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Como posso me conectar com um contador?</h3>
+                <p>Basta acessar nossa plataforma e seguir as instruções para encontrar um contador de confiança.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Quais serviços contábeis vocês oferecem?</h3>
+                <p>Oferecemos suporte para gestão financeira, cumprimento de obrigações fiscais e muito mais.</p>
+            </div>
+        </div>
+    </section>
+
         <!-- Rodapé -->
     <footer id="contato">
         <!-- Conteudo principal do footer-->
@@ -93,6 +109,6 @@
                 <p>copyright &copy;2020. <br> Desenvolvido por: Ana Luiza, Barbara Chacon, Bruna Lopez, Felipe de Souza, Juan Pablo, Renata Lima e Thais Ferreira</p>
             </div>
     </footer>
-            <script src="script.js"></script> <!-- Inclui o arquivo JavaScript -->
+    <script src="./src/script/app.js"></script>
 </body>
 </html>
