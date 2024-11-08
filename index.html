@@ -3,97 +3,158 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Links -->
-    <link rel="stylesheet" href="./src/style/landing.css"> <!-- Link CSS -->
-    <link rel="stylesheet" href="./src/style/@media.css">
     <link rel="stylesheet" href="./src/style/fonts.css"> <!-- Link do Css com as fontes -->
     <link rel="stylesheet" href="./src/style/reset.css "> <!-- Link do Css que reseta o estilo pré definido-->
-    <link rel="shortcut icon" href="./src/assets/img/Mei I help U-02.svg" type="image/x-icon"> <!-- Links favIcon-->
+    <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon"> <!-- Links favIcon-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Fonte Poppins -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Fonte Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"> <!-- Fonte Poppins -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- incones (para encotrar digite fa fa) --->
-    <title>MEI?</title>
-</head>
-<body>
-    <!-- Header -->
-    <div class="home"> <!-- Div container -->
-        <header> <!-- Cabeçalho -->
-            <nav class="header-content container"> <!-- Navegação -->
-                <div id="title">
-                    <h1>MEI</h1>     <!--Nome da empresa -->
-                    <h1>I Help You?</h1>    <!-- Slogam-->
-                </div>
-                <div class="header-links">  <!-- Contem Links -->
-                    <a class="links" href="#servico">Serviços</a>
-                    <a class="links" href="#faq">Help?</a> 
-                    <a class="links" href="#contato">Contato</a> 
-                    <a class="links"  id="login-btn" href="login">Login</a> <!-- Ira para outra página -->
-                </div>
-            </nav>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./src/style/landing.css">
+    <script src="./src/script/script.js"></script>
+    <title>Mei?</title>
+    </head>
+    <body>
+        
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+            <a href="./index.html"><img src="./src/assets/img/Mei I help U-01.png" class="logo-nav" width="110px" class="navbar-brand" href="landing.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#servico">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#faq">I Help You?</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="login-btn" href="./">Login</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!-- Seção Principal - Cor Azul -->
+        <div class="container-fluid hero-section d-flex align-items-center justify-content-center full-screen-section">
+            <div class="row text-center">
+            <div class="col-md-6">
+                <h2>Conectando MEIs e <br> Contadores de Confiança</h2>
+                <p>Encontre suporte contábil que você precisa, de forma simples e rápida</p>
+                <p><strong>MEI I Help You?</strong> conecta microempreendedores a contadores especializados, oferecendo suporte contábil rápido e eficiente. Nossa plataforma simplifica a gestão fiscal, ajudando você a resolver suas necessidades contábeis com facilidade, para que possa focar no crescimento do seu negócio.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="./src/assets/img/Personagem_para_o_site__4_-removebg-preview.png" class="img-fluid rounded" alt="Imagem relacionada">
+            </div>
+            </div>
         </div>
-        </header>
+        
+        <!-- Seção de Serviços -->
+        <div id="servico" class="container py-5">
+            <h2 class="text-center mb-4 servico">Serviços</h2>
+            <p class="text-center mb-4 servico-texto">Nosso site oferece dois serviços principais: acesso a um blog informativo com artigos sobre gestão financeira, obrigações fiscais e empreendedorismo, e uma plataforma que conecta microempreendedores individuais (MEIs) a contadores especializados. Com apenas alguns cliques, você pode esclarecer suas dúvidas no blog ou encontrar o suporte contábil personalizado que precisa para otimizar a administração do seu negócio.</p>
+        
+            <div class="row g-4">
+            <!-- Card Blog -->
+            <div class="col-md-6">
+                <div class="card">
+                <img src="./src/assets/img/Personagem com bolsa.png" class="card-img-top" alt="Blog">
+                <div class="card-body">
+                    <h5 class="card-title">Blog</h5>
+                    <p class="card-text">Acesse nosso blog para encontrar dicas e informações rápidas sobre gestão financeira, obrigações fiscais, empreendedorismo e muito mais.</p>
+                </div>
+                </div>
+            </div>
+        
+            <!-- Card Conexão Contadores e MEIs -->
+            <div class="col-md-6">
+                <div class="card">
+                <img src="./src/assets/img/Dois Personagens.png" class="card-img-top" alt="Conexão Contadores">
+                <div class="card-body">
+                    <h5 class="card-title">Conexão entre Contadores e MEIs</h5>
+                    <p class="card-text">Nossa plataforma conecta você a contadores e consultores especializados que podem ajudar a resolver suas dúvidas e a otimizar a gestão do seu negócio.</p>
+                </div>
+                </div>
+            </div>
+            </div>
+            <div class="cta-section">
+                <h2>Faça parte da nossa comunidade de sucesso!</h2>
+                <p>Transforme a maneira como você gerencia seu negócio. Conecte-se com especialistas, aproveite nossos recursos exclusivos e leve seu MEI ao próximo nível. Estamos prontos para ajudar você a crescer!</p>
+                <a href="/cadastro.html" class="cta-button">Cadastre-se agora</a>
+            </div>
+        </div>
+        
+        <!-- Seção de Perguntas Frequentes -->
+        <div id="faq" class="container-fluid py-5" id="faq" style="background-color: #f9f9f9;">
+            <h2 class="text-center mb-4 faq-text">I Help You?</h2>
+            <div class="accordion w-75 mx-auto" id="accordionPanelsStayOpenExample">
+            
+            <!-- Pergunta 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    O que é o Mei i Help You?
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                <div class="accordion-body">
+                    <strong>I Help You é uma plataforma que conecta MEIs a contadores especializados.</strong> Nossa missão é simplificar a gestão contábil para pequenos empreendedores, oferecendo suporte especializado para que eles possam focar no crescimento de seus negócios.
+                </div>
+                </div>
+            </div>
+            
+            <!-- Pergunta 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                    Como é feita a cobrança?
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
+                <div class="accordion-body">
+                    <strong>A plataforma é gratuita para acesso.</strong> A cobrança é realizada somente após a realização de um negócio entre o MEI e o contador, com uma pequena taxa sobre o valor do serviço prestado.
+                </div>
+                </div>
+            </div>
+            <!-- Item 3 do Acordeão -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                    Como posso me conectar a um contador?
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                <div class="accordion-body">
+                    Através da nossa plataforma, você pode encontrar contadores especializados para auxiliar com suas necessidades contábeis. Basta acessar a seção de Conexão e iniciar a busca!
+                </div>
+                </div>
+            </div>
+                <!-- Item 4 do Acordeão: Como é feita a cobrança? -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false" aria-controls="panelsStayOpen-collapseFour">
+                    É seguro contratar um contador pela plataforma?
+                </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour">
+                <div class="accordion-body">
+                    <strong>Sim!</strong> Todos os contadores na plataforma passam por um processo de verificação para garantir que estejam aptos a prestar serviços contábeis de qualidade e com segurança. Priorizamos a segurança e o profissionalismo em cada conexão.
+                </div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="main-hero container">
-        <main>
-            <!-- Para colocar o conteudo a esquerda -->
-            <aside>
-                <h2>Conectando MEIs e <br> Contadores de Confiança</h2> <!-- Titulo , span para mudar um detalhe-->
-                <p>Encontre suporte contábil que você precisa, de forma simples e rápida</p> <!-- Subtitulo-->
-                <p>MEI I Help You? conecta microempreendedores a contadores especializados, oferecendo suporte contábil rápido e eficiente. Nossa plataforma simplifica a gestão fiscal, ajudando você a resolver suas necessidades contábeis com facilidade, para que possa focar no crescimento do seu negócio.</p> <!-- Pequeno texto-->
-            </aside>
-            <!-- Para colocar o conteudo a direita -->
-            <article>
-                <img src="./src/assets/img/personagem 1 sem fundo.png" alt=""> <!-- Imagem -->
-            </article>
-        </main>
-    </div>
-    <!-- Serviços -->
-    <section id="servico">
-        <div class="servico-content container">
-            <h2>Serviços</h2> <!-- Titulo -->
-            <p>Nosso site oferece dois serviços principais: acesso a um blog informativo com artigos sobre gestão financeira, obrigações fiscais e empreendedorismo, e uma plataforma que conecta microempreendedores individuais (MEIs) a contadores especializados. Com apenas alguns cliques, você pode esclarecer suas dúvidas no blog ou encontrar o suporte contábil personalizado que precisa para otimizar a administração do seu negócio.</p>
-        </div>
-        <section class="blog-contador-mei">
-            <div class="blog-contador">
-                <img src="./src/assets/img/Personagem com bolsa.png" alt="Imagem Blog">
-                <div class="blog-contador-info">
-                    <strong>Blog</strong>
-                    <p>Acesse nosso blog para encontrar dicas e informações rápidas sobre gestão financeira, obrigações fiscais, empreendedorismo e muito mais.</p>
-                </div>
-            </div> 
-            <div class="blog-contador">
-                <img src="./src/assets/img/Dois Personagens.png" alt="Imagem Blog">
-                <div class="blog-contador-info">
-                    <strong>Conexão entre Contadores e MEIs</strong>
-                    <p>Nossa plataforma conecta você a contadores e consultores especializados que podem ajudar a resolver suas dúvidas e a otimizar a gestão do seu negócio.</p>
-                </div>
-            </div>
-        </section>
-        <a href="./cadastro.html" class="btn-cadastrar" target="_blank">Cadastre-se agora!</a>
-    </section>
-
-    <!-- Perguntas Frequentes (FAQ) -->
-    <section id="faq">
-        <div class="faq-content container">
-            <h2>Perguntas Frequentes</h2>
-            <div class="faq-item">
-                <h3>O que é um MEI?</h3>
-                <p>O MEI é uma categoria simplificada para microempreendedores individuais, oferecendo uma forma mais acessível de formalização.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Como posso me conectar com um contador?</h3>
-                <p>Basta acessar nossa plataforma e seguir as instruções para encontrar um contador de confiança.</p>
-            </div>
-            <div class="faq-item">
-                <h3>Quais serviços contábeis vocês oferecem?</h3>
-                <p>Oferecemos suporte para gestão financeira, cumprimento de obrigações fiscais e muito mais.</p>
             </div>
         </div>
-    </section>
-
-        <!-- Rodapé -->
+                <!-- Rodapé -->
     <footer id="contato">
         <!-- Conteudo principal do footer-->
         <div class="footer-content">
@@ -109,6 +170,6 @@
                 <p>copyright &copy;2020. <br> Desenvolvido por: Ana Luiza, Barbara Chacon, Bruna Lopez, Felipe de Souza, Juan Pablo, Renata Lima e Thais Ferreira</p>
             </div>
     </footer>
-    <script src="./src/script/app.js"></script>
+</body>
 </body>
 </html>

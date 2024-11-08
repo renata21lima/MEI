@@ -1,36 +1,51 @@
-header {
-  width: 100%; /* Para manter o header com 100% do espaço*/
+/* Cores Personalizadas */
+:root {
+  --blue-primary: #003376;
+  --green-secondary: #6fb645;
+  --gray-light: #f7f1e0;
 }
 
-.header-content {
-  display: flex; /* Para o cabeçalho ser um flex-blox*/
-  flex-direction: row; /* Para os elementos ficarem em li     nhas */
-  justify-content: space-between; /* Espaçamento entre as divs */
-  align-items: center; /* Alinhar itens no centro */
+body{
+  font-family: "poppinslight", sans-serif; /* Fonte */
 }
 
-#title {
-flex-direction: column; /* Para deixar os dois titulos em coluna fixa */
-line-height: 23px; /* Diminuir o espaçamento entre linhas */
+/* Customização do Navbar */
+.navbar {
+  background-color: var(--blue-primary);
 }
-
-.header-links {
-  display: flex; /* Para o cabeçalho ser um flex-blox*/
-  gap: 14px; /* Espaçamento */
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #fff !important;
   font-family: "poppinsmedium", sans-serif; /* Fonte */
+  font-size: 20px;
 }
 
-.links {
-  color: black; /* Cor do texto*/
-  cursor: pointer; /* Muda o cursor do mause */
-  text-decoration: none; /* Tira a bolinha e o hiperlink */
-  font-family: "poppinsmedium", sans-serif; /* Fonte */
-}
-
-.links:hover {
-  color: #6fb645; /* Cor */
-  transition: 0.3s all; /* Tempo de transição */
+.navbar-nav .nav-link:hover {
+  color: var(--green-secondary) !important;
+  animation: translateY 0.3s ease-in-out forwards; /* Tempo de transição */
   animation: translateY 10s infinite alternate; /* Animação */
+}
+
+/* Destaque do botão "Login" */
+#login-btn {
+  background-color: var(--green-secondary); /* Cor de fundo verde */
+  color: #fff !important; /* Cor do texto */
+  padding: 3px 10px; /* Espaçamento interno */
+  border-radius: 8px; /* Bordas arredondadas */
+  font-weight: bold; /* Texto em negrito */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
+}
+
+/* Hover para o botão "Login" */
+#login-btn:hover {
+  background-color: #4a944f; /* Tom mais escuro ao passar o mouse */
+  transform: scale(1.1); /* Leve aumento */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para efeito de destaque */
+}
+
+/* Estilo de hover geral para os links do navbar */
+.navbar-nav .nav-link:hover {
+  color: var(--green-secondary) !important;
 }
 
 @keyframes translateY {
@@ -42,257 +57,186 @@ line-height: 23px; /* Diminuir o espaçamento entre linhas */
   }
 }
 
-#login-btn {
-  border: solid #003376; /* Cor */
-  padding: 7px; /* Espaçamento Interno */
-  border-radius: 14px; /* Arredondar bordas */
+.navbar-toggler-icon {
+  background-color: #fff;
 }
 
-#login-btn:hover {
-  background-color: #003376; /* Mudança de fundo ao passar o mause */
-  transition: background-color 0.8s;
-}
-
-.container {
-max-width: 1440px;
-margin: 15px auto;
-padding: 0 8px;
-}
-
-main {
-display: flex; /* Para o a-side e article ser um flex-blox*/
-flex-direction: row; /* Para os elementos ficarem em linhas */
-margin-top: 70px; /* Espaçamento do main do header */
-min-height: 40vh;
-}
-
-.main-hero {
-  display: flex;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  height: calc(100vh - 80px); /* Ajusta a altura para não sobrepor o cabeçalho */
-}
-
-main aside article {
-flex: 1;
-}
-
-main h2 {
-font-size: 60px; /* Tamanho da fonte */
-line-height: 50px; /* Diminuir o espaçamento entre linhas */
-font-family: "poppinsmedium", sans-serif; /* Fonte */
-margin-bottom: 20px;
-}
-
-main span {
-color: #003376; /* Cor */
-font-weight: bold;
-}
-
-main p {
-line-height: 25px; /* Diminuir o espaçamento entre linhas */
-max-width: 70%; /* Mantem a largura máxima para os conteúdos não espalharem */
-text-align: justify; /* Deixar o texto justificado */
-font-family: "poppinslight", sans-serif; /* Fonte */
-font-size: 20px;
-}
-
-main img {
-margin-left: 10%; /* Afastar a esquerda*/
-}
-
-#servico {
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-padding: 54px 14px;
-height: calc(100vh - 80px);
-}
-
-.servico-content h2 {
-text-transform: uppercase;
-text-align: center;
-font-size: 38px;
-margin-bottom: 14px;
-}
-
-.servico-content p {
-line-height: 150%;
-margin-bottom: 14px;
-font-size: 20px;
-text-align: center;
-max-width: 1000px;
-}
-
-.blog-contador-mei {
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
-gap: 16px;
-padding: 0 44px 34px 44px;
-margin-bottom: 20px;
-}
-
-.blog-contador {
-flex: 1;
-display: flex;
-flex-direction: column;
-align-items: center;
-text-align: center;
-justify-content: center;
-border-radius: 8px;
-box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.8);
-overflow: hidden;
-}
-
-.blog-contador:hover {
-transform: scale(1.03);
-transition: 0.5s;
-}
-
-.blog-contador img {
-padding-top: 10px;
-width: 100%;
-max-width: 354px;
-}
-
-.blog-contador-info {
-padding: 10px;
-}
-
-.btn-cadastrar {
-  background-color: #4CAF50; /* Verde */
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer; 
-  border-radius: 15px;
-  border-style: none;
-}
-
-/* FAQ Section */
-#faq {
-  background-color: #f7f7f7;
-  padding: 40px 20px;
-  height: calc(100vh - 80px);
-}
-
-.faq-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.faq-content h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
-}
-
-.faq-item {
+/* Seção Principal - Cor Azul */
+.hero-section {
+  background-color: var(--blue-primary);
+  color: #fff; /* Garantindo que o texto tenha boa visibilidade */
+  padding: 80px 20px;
   text-align: left;
-  margin-bottom: 15px;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+  text-align: justify;
+}
+.hero-section h2 {
+  font-size: 60px; /* Tamanho da fonte */
+  font-family: "poppinsmedium", sans-serif; /* Fonte */
+  text-align: left;
+  font-size: 2.8rem;
+  font-weight: 600;
+  color: #fff; /* Título em branco */
+}
+.hero-section p {
+  text-align: justify;
+  font-family: "poppinslight", sans-serif; /* Fonte */
+  font-size: 25px;
+  color: #f7f1e0; /* Cor suave para o subtítulo */
 }
 
-.faq-item h3 {
-  font-size: 20px;
-  cursor: pointer;
-  color: #003376;
-  margin: 0;
+.img-fluid{
+  width: 67%;
 }
 
-.faq-item p {
-  font-size: 16px;
-  margin: 10px 0;
-  display: none; /* Para permitir ocultar e mostrar */
+/* Estilos de Serviços */
+.servico{
+  font-size: 50px;
+  font-family: "poppinsbold", sans-serif; /* Fonte */
+  color: var(--blue-primary); 
+  text-transform: uppercase; 
 }
 
-/* Mostrar resposta ao clicar */
-.faq-item.active p {
-  display: block;
+.servico-texto{
+  font-family: "poppinsmedium", sans-serif; /* Fonte */
+  text-align: justify;
+  font-size: 18px;
+  margin-bottom: 10px;
+
 }
 
-.footer-content {
-display: flex; /* Para ser um flex-blox */
-align-items: center; /* Alinhar ao Centro */
-flex-direction: column; /* Deixar um conteudo embaixo do outro */
+
+/* Estilos de Cards */
+.card {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+.card:hover {
+  transform: translateY(-10px);
+}
+.card-title {
+  font-weight: bold;
+  color: var(--blue-primary);
+}
+.card-body {
+  background-color: #fff;
+}
+
+/* Estilo para a chamada */
+.cta-section {
   background-color: #003376;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+.cta-section h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+}
+
+.cta-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+}
+
+.cta-button {
+  background-color: #6fb645;
+  color: #fff;
+  padding: 12px 25px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #5ca53d;
+}
+
+/* Faqs */
+.faq-text{
+  font-size: 50px;
+  font-family: "poppinsbold", sans-serif; /* Fonte */
+  color: var(--blue-primary); 
+  text-transform: uppercase; 
+}
+
+/* Acordeão */
+.accordion-button {
+  background-color: var(--blue-primary);
+  color: #fff;
+  font-weight: bold;
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--green-secondary);
+}
+.accordion-body {
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.full-screen-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+}
+
+.full-screen-section > * {
+  height: 100%;
+}
+
+/* Estilos para o Footer */
+footer {
+  background-color: var(--blue-primary);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
 }
 
 .footer-content h3 {
-  color: #fff;
-  font-size: 1.8rem; /* Tamanho da fonte */
-  font-weight: 400; /* Largura da fonte */
-  line-height: 2.5rem; /* Reduz o espaçamento entre as linhas */
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .footer-content p {
-  max-width: 500px; /* Tamanho da fonte */
-  margin: 5px auto; /* Reduz as margens */
-  line-height: 24px; /* Reduz o espaçamento entre linhas */
-  font-size: 14px; /* Peso da fonte */
-  color: #fff
+  font-size: 16px;
+  margin-bottom: 20px;
 }
 
 .socials {
   list-style: none;
+  padding: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-margin: 0.5rem 0 2rem 0; /* Diminui o espaçamento superior e inferior */
+  gap: 20px;
 }
 
-.socials li {
-  margin: 0 10px;
-}
-
-.socials a {
-text-decoration: none; /* Sem a bolinha da lista */
+.socials li a {
   color: #fff;
+  font-size: 24px;
+  transition: color 0.3s;
 }
 
-.socials a i {
-  font-size: 1.1rem;
-  transition: color 0.4s ease;
-}
-
-.socials a:hover i {
-color: #6fb645; /* Quando passar o mause o icone fica verde */
+.socials li a:hover {
+  color: var(--green-secondary);
 }
 
 .footer-bottom {
-  background: #000;
-  display: flex;
-  justify-content: center;
-  text-align: justify;
-padding: 10px 0; /* Reduz o espaçamento interno */
-}
-
-.footer-bottom p {
-  color: #fff;
+  margin-top: 20px;
   font-size: 14px;
-  word-spacing: 2px; /* Reduz o espaçamento entre as palavras */
+  border-top: 1px solid #fff;
+  padding-top: 10px;
+  color: #ddd;
 }
-
-/* Animações de Aparição */
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.5s ease , transform 0.5s ease;
-}
-
-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 
