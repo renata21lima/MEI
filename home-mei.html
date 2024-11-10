@@ -1,82 +1,87 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./src/style/home-mei.css">
     <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon">
-    <title>Painel MEI</title>
+    <link rel="stylesheet" href="./src/style/fonts.css">
+    <link rel="stylesheet" href="./src/style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src/script/homeMei.js"></script>
+    <link rel="stylesheet" href="./src/style/home-mei.css">
+    <title>Página Inicial - MEI</title>
+
 </head>
 <body>
-
-    <!-- Menu lateral -->
-    <div class="sidebar">
-        <a href="#dashboard">Dashboard</a>
-        <a href="#services">Serviços</a>
-        <a href="#support">Suporte</a>
-        <a href="#performance">Indicadores</a>
-        <a href="#news">Notícias</a>
-    </div>
-
-    <!-- Conteúdo principal -->
-    <div class="main-content">
-        <a href="./index.html"><img src="/logo.svg" alt="Logo" class="logo"></a>
-
-        <h2>Bem-vindo, <span id="userName">[Nome do MEI]</span>!</h2>
-
-        <!-- Dashboard -->
-        <div id="dashboard" class="section">
-            <h3>Seu Dashboard</h3>
-            <div class="box">
-                <p>Status MEI: <strong>Ativo</strong></p>
-                <p>Próximos prazos: <strong>15 de Novembro (DAS)</strong></p>
-            </div>
+    <nav class="sidebar">
+        <div class="user-info">
+            <img id="userPhoto" src="./src/assets/img/login icone.png" alt="Foto do usuário">
+            <h3 id="userName">Nome do Usuário</h3>
         </div>
+        <hr>
+        <ul class="nav-list">
+            <li><a href="./home-mei.html" id="homeLink"><i class="fas fa-home"></i><span class="nav-title">Página Inicial</span></a></li>
+            <li><a href="./servicomei.html" id="dashboardLink"><i class="fas fa-tachometer-alt"></i><span class="nav-title">Serviços</span></a></li>
+            <li><a href="./forum.html" id="forumLink"><i class="fas fa-comments"></i><span class="nav-title">Fórum</span></a></li>
+            <li><a href="./configuracao" id="settingsLink"><i class="fas fa-cogs"></i><span class="nav-title">Configurações</span></a></li>
+        </ul>
+        <button class="logout-btn">
+            <i class="icon-logout"></i><span><a href="/login.html">Deslogar</a></span>
+        </button>
+    </nav>
+    <div class="container">
 
-        <!-- Serviços e Recursos -->
-        <div id="services" class="section">
-            <h3>Serviços Contábeis para MEI</h3>
-            <div class="box">
-                <p><strong>Precisa de ajuda contábil?</strong> Agende uma consulta:</p>
-                
-                <a href="/agendar-consulta.html" class="btn">Agendar Consulta com Contador</a>
-            </div>
-        </div>
-
-        <!-- Suporte -->
-        <div id="support" class="section">
-            <h3>Suporte e Comunidade</h3>
-            <div class="box">
-                <p>Participe do nosso fórum de discussão e tire suas dúvidas com outros MEIs.</p>
-                <a href="./forum.html" class="btn">Acessar Fórum</a>
-                <p>Precisa de ajuda urgente? Entre em contato com um especialista:</p>
-                <a href="#" class="btn">Falar com um Especialista</a>
-            </div>
-        </div>
-
-        <!-- Indicadores de Performance -->
-        <div id="performance" class="section">
-            <h3>Indicadores de Performance</h3>
-            <div class="box">
-                <p>Acompanhe o desempenho do seu negócio:</p>
-                <p>[Gráfico de Faturamento]</p>
-            </div>
-        </div>
-
-        <!-- Notícias e Atualizações -->
-        <div id="news" class="section">
-            <h3>Notícias e Atualizações</h3>
-            <div class="box">
-                <p>Confira as últimas notícias que podem impactar o seu negócio:</p>
-                <ul>
-                    <li><a href="https://www.gov.br/nfse/pt-br/biblioteca/legislacao-aplicavel-ao-mei">Alterações na legislação para MEIs</a></li>
-                    <li><a href="https://sebrae.com.br/sites/PortalSebrae/ufs/ac/artigos/conheca-as-vantagens-e-obrigacoes-de-ser-um-mei,ed71c306d70db710VgnVCM100000d701210aRCRD#:
-                                ~:text=Vantagens%20de%20ser%20um%20MEI&text=
-                                Baixo%20custo%20mensal%20de%20tributos,a%20apoio%20t%C3%A9cnico%20do%20SEBRAE.">Novos incentivos para pequenos empresários</a></li>
+        <main class="main-content">
+            <h1>Bem-vindo ao seu Dashboard, <span id="userNameDisplay">Nome do Usuário</span>!</h1>
+            
+            <!-- Seção de Resumo do Negócio -->
+            <section class="business-summary">
+                <div class="summary-item">
+                    <h2>Faturamento</h2>
+                    <input type="number" id="revenueInput" placeholder="Digite o faturamento" value="5000">
+                </div>
+                <div class="summary-item">
+                    <h2>Despesas</h2>
+                    <input type="number" id="expensesInput" placeholder="Digite as despesas" value="3000">
+                </div>
+                <div class="summary-item">
+                    <h2>Lucro Líquido</h2>
+                    <p id="netProfit">R$ 2.000,00</p>
+                </div>
+            </section>
+        
+            <!-- Seção de Gráficos -->
+            <section class="charts">
+                <div class="chart">
+                    <h2>Faturamento e Despesas</h2>
+                    <div id="revenueChart" class="chart-box">
+                        <canvas id="monthlyRevenueChart"></canvas>
+                    </div>
+                </div>
+            </section>
+        
+            <!-- Seção de To-Do List -->
+            <section class="todo-list">
+                <h2>Minha To-Do List</h2>
+        
+                <!-- Formulário para adicionar nova tarefa -->
+                <div class="todo-input">
+                    <input type="text" id="todoText" placeholder="Digite a tarefa..." />
+                    <input type="date" id="todoDate" />
+                    <button id="addTaskBtn">Adicionar</button>
+                </div>
+        
+                <!-- Lista de tarefas -->
+                <ul id="taskList" class="task-list">
+                    <!-- As tarefas vão aparecer aqui -->
                 </ul>
-            </div>
-        </div>
+            </section>
+        </main>
     </div>
-    <script src="./src/script/homeMei.js"></script>
 </body>
 </html>

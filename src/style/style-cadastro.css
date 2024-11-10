@@ -1,69 +1,196 @@
-/* Estilo geral */
-body {
-    font-family: "poppinslight", sans-serif; /* Fonte */ 
-    background-color: #f4f4f4;
-    color: #333;
+/* Estilos gerais */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    box-sizing: border-box;
+    font-family: "poppinslight"
+}
+
+body, html {
+    height: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    background-color: #f4f4f9;
 }
 
-/* Container principal */
-h2 {
-    color: #003376; /* Cor principal para o título */
-    text-align: center;
-}
-
-h3 {
-    color: #003376; /* Cor principal para os subtítulos */
-}
-
-select, input, button {
+.navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 15px 30px;
+    background-color: #003376;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Para garantir que fique sobre o conteúdo */
+    font-family: "poppinsmedium", sans-serif; /* Fonte */
+}
+
+/* Logo da Navbar */
+.logo-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+/* Links da Navbar */
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #6FB645;
+}
+
+/* Container de Cadastro */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    padding: 2rem;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-top: 100px;
+    border-radius: 8px;
+}
+
+h2 {
+    color: #003376;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.profile-select {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.profile-select input[type="radio"] {
+    display: none;
+}
+
+.profile-select label {
+    padding: 0.8rem 1.5rem;
     border-radius: 5px;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003376;
+    transition: background-color 0.3s;
+}
+
+.profile-select input[type="radio"]:checked + label {
+    background-color: #6FB645;
+    color: #fff;
 }
 
 /* Formulários */
 .form-container {
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ccc;
+    width: 100%;
+    max-width: 400px;
+    padding: 2rem;
     border-radius: 8px;
-    width: 350px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Botões */
+label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
 button {
-    background-color: #003376; /* Cor principal */
+    padding: 0.8rem;
+    background-color: #003376;
     color: #fff;
     border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #6fb645; /* Cor de destaque ao passar o mouse */
+    background-color: #6FB645;
 }
 
-/* Inputs focados */
-input:focus, select:focus {
-    border-color: #6fb645;
-    outline: none;
+/* Link para Login */
+.login-link {
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    color: #666;
 }
 
-/* Melhorando responsividade */
-@media (max-width: 400px) {
-    .form-container {
-        width: 100%;
-        padding: 15px;
-    }
+.login-link a {
+    color: #003376;
+    text-decoration: none;
+    font-weight: bold;
 }
+
+.login-link a:hover {
+    color: #6FB645;
+}
+
+/* Estilo para a mensagem de sucesso */
+.success-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 400px;
+}
+
+.success-message p {
+    margin: 0;
+}
+
+

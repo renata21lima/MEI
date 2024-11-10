@@ -1,75 +1,103 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="main.js"></script>
-    <link rel="stylesheet" href="./src/style/style-cadastro.css">
     <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style/fonts.css"> <!-- Link do Css com as fontes -->
+    <link rel="stylesheet" href="./src/style/reset.css "> <!-- Link do Css que reseta o estilo pré definido-->
+    <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon"> <!-- Links favIcon-->
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Fonte Poppins -->
     <title>Cadastro MEI e Contador</title>
-    <style>
-        .form-container {
-            display: none;
-        }
-    </style>
+    <link rel="stylesheet" href="./src/style/style-cadastro.css">
 </head>
 <body>
-    <h2>Escolha o tipo de cadastro</h2>
-    <select id="userType" onchange="showForm()">
-        <option value="">Selecione...</option>
-        <option value="mei">MEI</option>
-        <option value="contador">Contador</option>
-    </select>
-
-    <!-- Formulário MEI -->
-    <div id="meiForm" class="form-container">
-        <h3>Cadastro MEI</h3>
-        <form id="formMei">
-
-            <label for="cnpjMei">CNPJ:</label>
-            <input type="text" id="cnpjMei" name="cnpjMei"><br><br>
-
-            <label for="nomeMei">Nome:</label>
-            <input type="text" id="nomeMei" name="nomeMei"><br><br>
+    <nav class="navbar-top">
+        <div class="logo-container">
+            <img src="./src/assets/img/Mei I help U-01.png" alt="Logo" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+        </ul>
+    </nav>
+    
+    <div class="container">
+        <!-- Seleção de Perfil -->
+        <h2>Escolha o tipo de cadastro</h2>
+        <div class="profile-select">
+            <input type="radio" id="mei" name="profile" value="mei" onclick="showForm('mei')" checked>
+            <label for="mei">MEI</label>
             
-            <label for="enderecoMei">Endereço:</label>
-            <input type="text" id="enderecoMei" name="enderecoMei"><br><br>
+            <input type="radio" id="contador" name="profile" value="contador" onclick="showForm('contador')">
+            <label for="contador">Contador</label>
+        </div>
 
-            <label for="emailMei">Email:</label>
-            <input type="email" id="emailMei" name="emailMei"><br><br>
+        <!-- Formulário MEI -->
+        <div id="meiForm" class="form-container">
+            <h3>Cadastro MEI</h3>
+            <form id="formMei">
+                <label for="cnpjMei">CNPJ:</label>
+                <input type="text" id="cnpjMei" name="cnpjMei" required>
 
-            <label for="senhaMei">Senha:</label>
-            <input type="text" id="senhaMei" name="senhaMei"><br><br>
-            
-            <button type="button" onclick="submitForm('mei')">Cadastrar MEI</button>
-        </form>
+                <label for="nomeMei">Nome:</label>
+                <input type="text" id="nomeMei" name="nomeMei" required>
+
+                <label for="telefoneMei">Telefone:</label>
+                <input type="tel" id="telefoneMei" name="telefoneMei" required>
+
+                <label for="empresaMei">Nome da Empresa:</label>
+                <input type="text" id="empresaMei" name="empresaMei" required>
+
+                <label for="enderecoMei">Endereço:</label>
+                <input type="text" id="enderecoMei" name="enderecoMei" required>
+
+                <label for="emailMei">Email:</label>
+                <input type="email" id="emailMei" name="emailMei" required>
+
+                <label for="senhaMei">Senha:</label>
+                <input type="password" id="senhaMei" name="senhaMei" required>
+
+                <button type="button" onclick="submitForm('mei')">Cadastrar MEI</button>
+            </form>
+        </div>
+
+        <!-- Formulário Contador -->
+        <div id="contadorForm" class="form-container" style="display: none;">
+            <h3>Cadastro Contador</h3>
+            <form id="formContador">
+                <label for="nomeContador">Nome:</label>
+                <input type="text" id="nomeContador" name="nomeContador" required>
+
+                <label for="telefoneContador">Telefone:</label>
+                <input type="tel" id="telefoneContador" name="telefoneContador" required>
+
+                <label for="empresaContador">Nome da Empresa:</label>
+                <input type="text" id="empresaContador" name="empresaContador" required>
+
+                <label for="emailContador">Email:</label>
+                <input type="email" id="emailContador" name="emailContador" required>
+
+                <label for="cpfContador">CPF:</label>
+                <input type="text" id="cpfContador" name="cpfContador" required>
+
+                <label for="crcContador">CRC:</label>
+                <input type="text" id="crcContador" name="crcContador" required>
+
+                <label for="enderecoContador">Endereço:</label>
+                <input type="text" id="enderecoContador" name="enderecoContador" required>
+
+                <label for="senhaContador">Senha:</label>
+                <input type="password" id="senhaContador" name="senhaContador" required>
+
+                <button type="button" onclick="submitForm('contador')">Cadastrar Contador</button>
+            </form>
+        </div>
+
+        <!-- Link para a página de login -->
+        <p class="login-link">Já possui cadastro? <a href="./login.html">Faça o login</a></p>
     </div>
 
-    <!-- Formulário Contador -->
-    <div id="contadorForm" class="form-container">
-        <h3>Cadastro Contador</h3>
-        <form id="formContador">
-            <label for="nomeContador">Nome:</label>
-            <input type="text" id="nomeContador" name="nomeContador"><br><br>
-            
-            <label for="emailContador">Email:</label>
-            <input type="email" id="emailContador" name="emailContador"><br><br>
-
-            <label for="cpfContador">CPF:</label>
-            <input type="text" id="cpfContador" name="cpfContador"><br><br>
-
-            <label for="crcContador">CRC:</label>
-            <input type="text" id="crcContador" name="crcContador"><br><br>
-
-            <div>
-                <input type="checkbox" id="verificacao" required>
-                <label for="verificacao">Concordo em passar por um processo de verificação de dados para garantir que sou realmente um contador.</label>
-            </div>
-            <br>
-
-            <button type="button" onclick="submitForm('contador')">Cadastrar Contador</button>
-        </form>
-    </div>
     <script src="./src/script/cadastro.js"></script>
 </body>
 </html>
