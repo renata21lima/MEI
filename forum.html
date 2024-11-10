@@ -4,43 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style/fonts.css">
+    <link rel="stylesheet" href="./src/style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="./src/style/forum.css">
+    <script src="./src/script/forum.js"></script>
+    <script src="./src/script/homeMei.js"></script>
     <title>Fórum dos MEIs</title>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Fórum dos MEIs</h1>
-
-        <div id="posts">
-            <div class="post">
-                <h3>Dúvida sobre emissão de nota fiscal</h3>
-                <p>Olá, estou com dificuldades para emitir notas fiscais. Alguém pode me ajudar?</p>
-                <div class="comments">
-                    <div class="comment">Resposta: Você pode utilizar plataformas como NFE.io para emitir suas notas fiscais.</div>
-                    <div class="comment">Resposta: Também recomendo consultar o SEBRAE, eles têm ótimos recursos.</div>
-                </div>
-                <div class="comment-form">
-                    <input type="text" placeholder="Digite seu nome" id="commentName1">
-                    <textarea placeholder="Digite sua resposta" id="commentText1"></textarea>
-                    <button onclick="addComment(1)">Responder</button>
-                </div>
-            </div>
-
-            <div class="post">
-                <h3>Dúvida sobre pagamento do DAS</h3>
-                <p>Alguém sabe como funciona o pagamento do DAS? Estou confuso.</p>
-                <div class="comments">
-                    <div class="comment">Resposta: O pagamento do DAS deve ser feito todo mês, e você pode pagar online pelo site da Receita Federal.</div>
-                </div>
-                <div class="comment-form">
-                    <input type="text" placeholder="Digite seu nome" id="commentName2">
-                    <textarea placeholder="Digite sua resposta" id="commentText2"></textarea>
-                    <button onclick="addComment(2)">Responder</button>
-                </div>
-            </div>
+    <nav class="sidebar">
+        <div class="user-info">
+            <img id="userPhoto" src="./src/assets/img/login icone.png" alt="Foto do usuário">
+            <h3 id="userName">Nome do Usuário</h3>
         </div>
-    </div>
-    <script src="./src/script/forum.js"></script>
+        <hr>
+        <ul class="nav-list">
+            <li><a href="./home-mei.html" id="homeLink"><i class="fas fa-home"></i><span class="nav-title">Página Inicial</span></a></li>
+            <li><a href="./mei-servico.html" id="dashboardLink"><i class="fas fa-tachometer-alt"></i><span class="nav-title">Serviços</span></a></li>
+            <li><a href="./forum.html" id="forumLink"><i class="fas fa-comments"></i><span class="nav-title">Fórum</span></a></li>
+            <li><a href="./mei-config.html" id="settingsLink"><i class="fas fa-cogs"></i><span class="nav-title">Configurações</span></a></li>
+        </ul>
+        <button class="logout-btn">
+            <i class="icon-logout"></i><span><a href="/login.html">Deslogar</a></span>
+        </button>
+    </nav>
+
+    <main class="consulta-container">
+        <h1>Área de Consultas</h1>
+        <p>Descreva suas dúvidas ou dificuldades para receber ajuda de um contador.</p>
+    
+        <form id="consultaForm" onsubmit="enviarConsulta(event)">
+            <label for="consultaDescricao">Sua dúvida:</label>
+            <textarea id="consultaDescricao" placeholder="Descreva sua dúvida ou dificuldade" required></textarea>
+            <button type="submit">Enviar Consulta</button>
+        </form>
+    
+        <!-- Mensagem de confirmação -->
+        <div id="mensagemConfirmacao" class="mensagem-confirmacao" style="display: none;">
+            Sua dúvida foi enviada com sucesso!
+        </div>
+    
+        <section class="consultas-enviadas">
+            <h2>Consultas Enviadas</h2>
+            <div id="consultasList"></div>
+        </section>
+    </main>
 </body>
 </html>
