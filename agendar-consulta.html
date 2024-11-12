@@ -4,123 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendar Consulta</title>
-    <style>
-        /* Estilização geral */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f5;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #333;
-            font-size: 1.5em;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: bold;
-            color: #555;
-        }
-
-        input[type="text"], 
-        textarea, 
-        select {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            font-size: 1em;
-        }
-
-        textarea {
-            resize: vertical;
-        }
-
-        select {
-            padding: 8px;
-        }
-
-        /* Botão de envio */
-        .btn {
-            width: 100%;
-            background-color: rgb(59, 137, 255);
-            color: white;
-            padding: 12px;
-            border: none;
-            border-radius: 5px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #45a049;
-        }
-
-        /* Responsividade */
-        @media (max-width: 480px) {
-            .container {
-                padding: 15px;
-            }
-
-            h2 {
-                font-size: 1.2em;
-            }
-
-            .btn {
-                font-size: 0.9em;
-            }
-        }
-    </style>
     <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style/fonts.css">
+    <link rel="stylesheet" href="./src/style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Fonte Poppins -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Fonte Poppins -->
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src/script/homeMei.js"></script>
     <link rel="stylesheet" href="./src/style/agendar.css">
 </head>
 <body>
+    <nav class="sidebar">
+        <div class="user-info">
+            <img id="userPhoto" src="./src/assets/img/login icone.png" alt="Foto do usuário">
+            <h3 id="userName">Nome do Usuário</h3>
+        </div>
+        <hr>
+        <ul class="nav-list">
+            <li><a href="./home-mei.html" id="homeLink"><i class="fas fa-home"></i><span class="nav-title">Página Inicial</span></a></li>
+            <li><a href="./servicomei.html" id="dashboardLink"><i class="fas fa-tachometer-alt"></i><span class="nav-title">Serviços</span></a></li>
+            <li><a href="./forum.html" id="forumLink"><i class="fas fa-comments"></i><span class="nav-title">Fórum</span></a></li>
+            <li><a href="./mei-config.html" id="settingsLink"><i class="fas fa-cogs"></i><span class="nav-title">Configurações</span></a></li>
+        </ul>
+        <button class="logout-btn">
+            <i class="icon-logout"></i><span><a href="/login.html">Deslogar</a></span>
+        </button>
+    </nav>
+    <div class="consulta-container">
+        <h2>Área de Agendamento</h2>
+        <p>Escolha uma data, horário e descreva a sua dúvida para receber ajuda de um contador.</p>
 
-<div class="container">
-    <h2>Descreva seu problema</h2>
-    <form id="consultaForm">
-        <label for="nome">Seu Nome:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="problema">Descreva o problema:</label>
-        <textarea id="problema" name="problema" rows="4" required></textarea>
-
-        <label for="urgencia">Nível de Urgência:</label>
-        <select id="urgencia" name="urgencia">
-            <option value="baixa">Baixa</option>
-            <option value="media">Média</option>
-            <option value="alta">Alta</option>
-        </select>
-
-        <button type="submit" class="btn">Enviar Consulta</button>
-    </form>
-</div>
+        <label for="descricao">Descrição da Consulta:</label>
+        <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva sua dúvida ou dificuldade"></textarea>
+        
+        <button class="btn-enviar">Agendar Consulta</button>
+        
+        <button class="btn-consultas">Consultas Agendadas</button>
+    </div>
+    <div id="consultasAgendadasContainer" class="consultas-container">
+        <h3>Consultas Agendadas:</h3>
+        <div id="consultasList" class="consultas-list">
+            <!-- Consultas serão exibidas aqui -->
+        </div>
+    </div>
     <script src="./src/script/agendar.js"></script>
 </body>
 </html>
