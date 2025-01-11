@@ -1,10 +1,8 @@
-function showForm() {
-    const userType = document.getElementById("userType").value;
-    
+function showForm(userType) {
     // Esconde todos os formulários
     document.getElementById("meiForm").style.display = "none";
     document.getElementById("contadorForm").style.display = "none";
-    
+
     // Exibe o formulário correspondente ao tipo de usuário selecionado
     if (userType === "mei") {
         document.getElementById("meiForm").style.display = "block";
@@ -21,31 +19,44 @@ function submitForm(userType) {
         formData = {
             tipo: "mei",
             nome: document.getElementById("nomeMei").value,
+            telefone: document.getElementById("telefoneMei").value,
+            empresa: document.getElementById("empresaMei").value,
             email: document.getElementById("emailMei").value,
-            cnpj: document.getElementById("cnpjMei").value
+            cnpj: document.getElementById("cnpjMei").value,
+            endereco: document.getElementById("enderecoMei").value,
+            senha: document.getElementById("senhaMei").value
         };
     } else if (userType === "contador") {
-        // Verifica se o checkbox de verificação foi marcado
-        if (!document.getElementById("verificacao").checked) {
-            alert("Você precisa concordar com o processo de verificação de dados.");
-            return; // Interrompe a execução se não estiver marcado
-        }
         formData = {
             tipo: "contador",
             nome: document.getElementById("nomeContador").value,
+            telefone: document.getElementById("telefoneContador").value,
+            empresa: document.getElementById("empresaContador").value,
             email: document.getElementById("emailContador").value,
             cpf: document.getElementById("cpfContador").value,
-            crc: document.getElementById("crcContador").value
+            crc: document.getElementById("crcContador").value,
+            endereco: document.getElementById("enderecoContador").value,
+            senha: document.getElementById("senhaContador").value
         };
     }
 
-    // Armazena o usuário no localStorage (ou outro mecanismo que desejar)
-    localStorage.setItem('user', JSON.stringify(formData));
-    
-    // Redireciona para a página correspondente
-    if (userType === "mei") {
-        window.location.href = "home-mei.html";
-    } else if (userType === "contador") {
-        window.location.href = "home-contador.html";
+    // Verificação simples para garantir que os campos obrigatórios estão preenchidos
+    if (!formData.email || !formData.senha) {
+        alert("Por favor, preencha todos os campos obrigatórios!");
+        return;
     }
+
+    // Armazena o usuário no localStorage
+    localStorage.setItem('user', JSON.stringify(formData));
+
+    // Exibe a mensagem de sucesso
+    const messageContainer = document.createElement('div');
+    messageContainer.classList.add('success-message');
+    messageContainer.innerHTML = "<p>Cadastro realizado com sucesso! Você será redirecionado para o login.</p>";
+    document.body.appendChild(messageContainer);
+
+    // Após 2 segundos, redireciona para a página de login
+    setTimeout(function() {
+        window.location.href = './login.html';
+    }, 2000); // Aguardar 2 segundos antes de redirecionar
 }

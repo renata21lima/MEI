@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./src/style/fonts.css">
+    <link rel="stylesheet" href="./src/style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.3.1/dist/fullcalendar.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./src/script/homeMei.js"></script>
+    <script src="./src/script/servico.js"></script>
+    <link rel="stylesheet" href="./src/style/servicomei.css">
+    <title>Página Inicial - MEI</title>
+
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="user-info">
+            <img id="userPhoto" src="./src/assets/img/login icone.png" alt="Foto do usuário">
+            <h3 id="userName">Nome do Usuário</h3>
+        </div>
+        <hr>
+        <ul class="nav-list">
+            <li><a href="./home-mei.html" id="homeLink"><i class="fas fa-home"></i><span class="nav-title">Página Inicial</span></a></li>
+            <li><a href="./servicomei.html" id="dashboardLink"><i class="fas fa-tachometer-alt"></i><span class="nav-title">Serviços</span></a></li>
+            <li><a href="./forum.html" id="forumLink"><i class="fas fa-comments"></i><span class="nav-title">Fórum</span></a></li>
+            <li><a href="./mei-config.html" id="settingsLink"><i class="fas fa-cogs"></i><span class="nav-title">Configurações</span></a></li>
+        </ul>
+        <button class="logout-btn">
+            <i class="icon-logout"></i><span><a href="/login.html">Deslogar</a></span>
+        </button>
+    </nav>
+    <div class="services-section">
+            <!-- Área de Suporte ou Abertura de Chamado -->
+            <div class="support-section">
+                <h3>Está em dúvida ou precisa de mais detalhes?</h3>
+                <p>Se você tem dúvidas sobre os cálculos ou precisa de uma explicação mais detalhada, não se preocupe! Nossos contadores estão prontos para te ajudar.</p>
+                <p>Abra um chamado e um de nossos especialistas entrará em contato com você em breve.</p>
+                <button onclick="window.location.href='./agendar-consulta.html'">Abrir Chamado</button>
+            </div>
+        <h2>Cálculos Tributários</h2>
+        <div class="cards-container">
+
+        <!-- Calculadora do DAS -->
+        <div class="tax-calculation">
+            <h3>Calculadora do DAS (Simples Nacional)</h3>
+            <label for="category">Selecione sua categoria:</label>
+            <select id="category">
+                <option value="comercio">Comércio/Indústria</option>
+                <option value="servicos">Prestação de Serviços</option>
+                <option value="comercio_servicos">Comércio e Serviços</option>
+            </select>
+            <button onclick="calculateDAS()">Calcular</button>
+            <p>Valor do DAS: <span id="dasResult">R$ 0,00</span></p>
+        </div>
+
+        <!-- Calculadora de INSS -->
+        <div class="tax-calculation">
+            <h3>Calculadora de INSS para MEI</h3>
+            <label for="salary">Digite o salário mínimo (R$):</label>
+            <input type="number" id="salary" placeholder="Ex: 1320">
+            <button onclick="calculateINSS()">Calcular</button>
+            <p>Valor do INSS: <span id="inssResult">R$ 0,00</span></p>
+        </div>
+
+        <!-- Simulador de Faturamento Bruto Anual -->
+        <div class="tax-calculation">
+            <h3>Simulador de Faturamento Bruto Anual</h3>
+            <label for="monthlyRevenue">Digite o faturamento de cada mês:</label>
+            <input type="number" id="monthlyRevenue" placeholder="Ex: 5000">
+            <button onclick="calculateAnnualRevenue()">Calcular</button>
+            <p>Total Anual: <span id="annualRevenue">R$ 0,00</span></p>
+            <p id="status"></p>
+        </div>
+
+        <!-- Calculadora de ISS -->
+        <div class="tax-calculation">
+            <h3>Calculadora de ISS para Profissionais Autônomos</h3>
+            <label for="city">Escolha a cidade ou alíquota de ISS:</label>
+            <select id="city">
+                <option value="2">Cidade A - 2%</option>
+                <option value="3">Cidade B - 3%</option>
+                <option value="5">Cidade C - 5%</option>
+            </select>
+            <label for="serviceValue">Valor do serviço (R$):</label>
+            <input type="number" id="serviceValue" placeholder="Digite o valor do serviço">
+            <button onclick="calculateISS()">Calcular</button>
+            <p>Imposto ISS: <span id="issResult">R$ 0,00</span></p>
+        </div>
+
+        <!-- Simulador de Declaração Anual -->
+        <div class="tax-calculation">
+            <h3>Simulador de Declaração Anual do MEI</h3>
+            <label for="monthlyIncome">Faturamento mensal (R$):</label>
+            <input type="number" id="monthlyIncome" placeholder="Ex: 5000">
+            <button onclick="calculateDeclaration()">Calcular</button>
+            <p>Total Anual: <span id="annualIncome">R$ 0,00</span></p>
+        </div>
+
+        <!-- Simulador de Multa por Atraso no DAS -->
+        <div class="tax-calculation">
+            <h3>Simulador de Multa por Atraso no DAS</h3>
+            <label for="dueDate">Data de vencimento:</label>
+            <input type="date" id="dueDate">
+            <label for="paymentDate">Data de pagamento:</label>
+            <input type="date" id="paymentDate">
+            <button onclick="calculatePenalty()">Calcular Multa</button>
+            <p>Multa e Juros: <span id="penaltyResult">R$ 0,00</span></p>
+        </div>
+
+        <!-- Calculadora de Salário Líquido -->
+        <div class="tax-calculation">
+            <h3>Calculadora de Salário Líquido</h3>
+            <label for="revenue">Faturamento mensal (R$):</label>
+            <input type="number" id="revenue" placeholder="Ex: 5000">
+            <label for="expenses">Despesas mensais (R$):</label>
+            <input type="number" id="expenses" placeholder="Ex: 1000">
+            <button onclick="calculateSalary()">Calcular Salário Líquido</button>
+            <p>Salário Líquido: <span id="salaryResult">R$ 0,00</span></p>
+        </div>
+
+        <!-- Simulador de Custos -->
+        <div class="tax-calculation">
+            <h3>Simulador de Custos</h3>
+            <label for="costs">Custos mensais totais (R$):</label>
+            <input type="number" id="costs" placeholder="Ex: 1500">
+            <button onclick="calculateCosts()">Calcular Preço Mínimo</button>
+            <p>Preço Mínimo: <span id="costsResult">R$ 0,00</span></p>
+        </div>
+    </div>
+    <hr>
+</body>
+</html>

@@ -1,28 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
     <link rel="shortcut icon" href="./src/assets/img/logo.svg" type="image/x-icon">
-    <link rel="stylesheet" href="src/style/login.css">
+    <link rel="stylesheet" href="./src/style/fonts.css">
+    <link rel="stylesheet" href="./src/style/reset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Login</title>
+    <link rel="stylesheet" href="./src/style/login.css">
+
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-header">
-            <button class="tab-button active" onclick="switchTab(this)">MEI</button>
-            <button class="tab-button" onclick="switchTab(this)">CONTADOR</button>
+    <nav class="navbar-top">
+        <div class="logo-container">
+            <img src="./src/assets/img/Mei I help U-01.png" alt="Logo" class="logo">
         </div>
-        <h2>LOGIN</h2>
-        <form>
-            <label for="email">EMAIL</label>
-            <input type="email" id="email" required>
-            <label for="senha">SENHA</label>
-            <input type="password" id="senha" required>
-            <button type="submit" class="login-button">LOGAR</button>
-        </form>
-        <p class="register-text">Ainda não tem conta? <a href="/cadastro.html">Cadastre-se</a></p>
+        <ul class="nav-links">
+            <li><a href="./index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="image-section">
+            <img src="./src/assets/img/Personagem com bolsa.png" alt="Imagem de fundo">
+        </div>
+
+        <div class="login-section">
+            <h2>Bem-vindo!</h2>
+            <p>Escolha como deseja entrar:</p>
+
+            <!-- Seleção de Perfil -->
+            <div class="profile-select">
+                <input type="radio" id="mei" name="profile" value="mei" checked>
+                <label for="mei">MEI</label>
+
+                <input type="radio" id="contador" name="profile" value="contador">
+                <label for="contador">Contador</label>
+            </div>
+
+            <!-- Formulário de Login -->
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginSenha" placeholder="Senha" required>
+                <button type="submit">Entrar</button>
+            </form>
+
+            <p class="signup-text">Não possui conta?</p>
+            <button onclick="window.location.href='cadastro.html'" class="signup-button">Inscreva-se</button>
+        </div>
     </div>
-    <script src="src/script/login.js"></script>
+
+    <script src="./src/script/login.js"></script>
 </body>
 </html>
